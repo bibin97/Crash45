@@ -1,0 +1,198 @@
+/* ===========================================================
+   BASE IMPORTS
+=========================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ===========================================================
+   LIGHT MODE (DEFAULT)
+=========================================================== */
+body {
+  background: #e6e6e6 !important;   /* Premium silver */
+  color: #071525 !important;        /* Premium dark text */
+}
+
+/* Headings */
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  color: #008080 !important;  /* Premium teal */
+}
+
+/* Paragraphs / lists */
+body p,
+body span,
+body li {
+  color: #1a1f2b !important;
+}
+
+/* Cards */
+body .card {
+  background: #ffffff !important;
+  border: 1px solid rgba(0,0,0,0.1) !important;
+  color: #071525 !important;
+}
+
+/* Chips */
+body .chip {
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.08);
+  color: #071525;
+}
+
+/* ===========================================================
+   GLOBAL BUTTONS (NAV ITEMS NOT INCLUDED)
+=========================================================== */
+button:not(.nav-item),
+.btn-yellow,
+[data-magnetic] {
+  
+  color: #000 !important;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+button:not(.nav-item):hover {
+  
+  transform: scale(1.03);
+}
+
+/* ===========================================================
+   DARK MODE
+=========================================================== */
+.dark body {
+  background: #05070d !important;
+  color: #f3f4f6 !important;
+}
+
+/* Dark headings */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #4fd1c5 !important;
+}
+
+/* Dark text */
+.dark p,
+.dark span,
+.dark li {
+  color: #dce1e8 !important;
+}
+
+/* Dark cards */
+.dark .card {
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  color: #ffffff !important;
+}
+
+/* Dark chip */
+.dark .chip {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+/* ===========================================================
+   NAVBAR — REMOVE BACKGROUND STYLE FROM MENU BUTTONS
+=========================================================== */
+.nav-item {
+  background: transparent !important;
+  color: inherit !important;
+  border-radius: 0 !important;
+  padding: 6px 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+/* Hover color (premium teal) */
+.nav-item:hover {
+  color: #008080 !important;
+}
+
+/* Underline Hover Effect */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #008080;
+  transition: width 0.25s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Remove scaling hover from nav only */
+.nav-item:hover {
+  transform: none !important;
+}
+
+/* ===========================================================
+   TRANSPARENT PAGE SECTIONS
+=========================================================== */
+section {
+  background: transparent !important;
+}
+
+/* ===========================================================
+   CURSOR
+=========================================================== */
+.magnetic-cursor {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  border: 2px solid rgba(255,213,79,0.9);
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .magnetic-cursor {
+    display: none;
+  }
+}
+/* NAVBAR TEXT FIX */
+/* NAVBAR TEXT FIX */
+.nav-item {
+  color: #071525 !important; /* light mode */
+}
+
+.dark .nav-item {
+  color: #ffffff !important; /* dark mode */
+}
+
+.nav-item:hover {
+  color: #008080 !important; /* teal hover */
+}
+
+/* Block yellow dot cursor inside navbar */
+nav button,
+nav a {
+  pointer-events: auto;
+}
