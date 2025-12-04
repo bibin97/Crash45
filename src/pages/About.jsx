@@ -37,7 +37,7 @@ export default function About() {
         <motion.h2
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          className="text-center text-4xl md:text-6xl font-bold"
+          className="text-center font-[poppins] text-3xl md:text-6xl font-bold"
         >
           About{" "}
           <span className="bg-gradient-to-r from-[#008080] to-[#f8ba2b] bg-clip-text text-transparent">
@@ -47,7 +47,7 @@ export default function About() {
 
         {/* Mission */}
         <div className="card rounded-3xl p-10 shadow-xl backdrop-blur-xl">
-          <h3 className="text-3xl font-bold mb-4">Our Mission</h3>
+          <h3 className="text-3xl font-bold mb-4 font-[inter]">Our Mission</h3>
           <p className="text-lg opacity-80">
             Crash 45 gives every student a dedicated mentor with a precision-built system.
           </p>
@@ -57,7 +57,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-10">
           {cards.map((card, i) => (
             <div key={i} className="card p-8 rounded-3xl shadow-xl backdrop-blur-xl">
-              <h3 className="text-2xl font-bold mb-6">{card.title}</h3>
+              <h3 className="text-2xl font-bold mb-6 font-[inter]">{card.title}</h3>
               <ul className="space-y-3">
                 {card.points.map((p, i2) => (
                   <li key={i2} className="flex items-start gap-3">
@@ -71,7 +71,7 @@ export default function About() {
         </div>
 
         {/* How It Works */}
-        <h2 className="text-center text-4xl font-bold mb-14">How It Works</h2>
+        <h2 className="text-center text-xl font-bold font-[poppins] mb-14">How It Works</h2>
         <div className="space-y-10">
           {howSteps.map((step, i) => (
             <div key={i} className="flex gap-6">
@@ -79,8 +79,8 @@ export default function About() {
                 {step.step}
               </div>
               <div className="card p-6 rounded-2xl shadow-xl backdrop-blur-xl flex-1">
-                <h3 className="text-2xl font-semibold mb-2">{step.title}</h3>
-                <p>{step.desc}</p>
+                <h3 className="text-2xl font-semibold font-[inter] mb-2">{step.title}</h3>
+                <p className="font-[poppins]">{step.desc}</p>
               </div>
             </div>
           ))}

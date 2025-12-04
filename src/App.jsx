@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import MagneticCursor from "./components/MagneticCursor";
+
 import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
@@ -31,7 +31,7 @@ export default function App() {
   return (
     <div>
       {/* Cursor */}
-      <MagneticCursor />
+     
 
       {/* Navbar */}
       <Navbar

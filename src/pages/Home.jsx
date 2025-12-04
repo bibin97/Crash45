@@ -21,10 +21,10 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 font-[poppins]"
           >
             Full Subject <br/> Full Revision <br /> Full Mastery{" "}
-            <span className="bg-gradient-to-r from-[#008080] via-[#f8ba2b] to-[#008080] bg-clip-text text-transparent">
+            <span className="bg--[#008080]  bg-clip-text text-transparent">
              <br /> In Just 45 Hours.
             </span>
           </motion.h1>
@@ -60,7 +60,7 @@ export default function Home() {
                 Limited seats. First come first serve.
               </p>
 
-              <div className="text-xs mt-2 opacity-70 flex flex-col gap-1">
+              <div className="text-xs mt-2 opacity-70 flex flex-col gap-1 font-[poppins]">
                 <p>✔ Trusted by 3700+ parents</p>
                 <p>✔ Designed by top educators</p>
                 <p>✔ Avg improvement: +47 marks in 45 hours</p>

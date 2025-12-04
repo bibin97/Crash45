@@ -38,7 +38,7 @@ export default function Features() {
     <section id="features" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
 
-        <h2 className="text-center text-4xl md:text-6xl font-bold mb-14">
+        <h2 className="text-center text-4xl md:text-6xl font-[poppins] font-bold mb-14">
           What You Get with the{" "}
           <span className="bg-gradient-to-r from-[#008080] to-[#f8ba2b] bg-clip-text text-transparent">
             C45 Program
