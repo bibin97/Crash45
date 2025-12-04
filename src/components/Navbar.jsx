@@ -29,14 +29,16 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* LOGO */}
-        <motion.div
-          className="text-2xl font-black cursor-pointer flex items-center gap-1"
-          whileHover={{ scale: 1.05 }}
-          onClick={() => scrollToSection(scrollRefs.home)}
-        >
-          <span className="text-[#008080]">CRASH</span>
-          <span className="text-[#f8ba2b]">45</span>
-        </motion.div>
+       {/* LOGO */}
+<motion.div
+  className="text-2xl font-black cursor-pointer flex items-center gap-1"
+  whileHover={{ scale: 1.05 }}
+  onClick={() => scrollToSection(scrollRefs.home)}
+>
+  <span className="text-[#008080]">CRASH</span>
+  <span className="text-[#f8ba2b]">45</span>
+</motion.div>
+
 
         {/* DESKTOP MENU */}
         <div className="hidden md:flex items-center gap-8">

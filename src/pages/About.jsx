@@ -75,7 +75,7 @@ export default function About() {
         <div className="space-y-10">
           {howSteps.map((step, i) => (
             <div key={i} className="flex gap-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#008080] to-[#f8ba2b] rounded-full flex items-center justify-center text-xl font-black text-black">
+              <div className="w-16 h-16 bg-[#008080]  rounded-full flex items-center justify-center text-xl font-black text-black">
                 {step.step}
               </div>
               <div className="card p-6 rounded-2xl shadow-xl backdrop-blur-xl flex-1">

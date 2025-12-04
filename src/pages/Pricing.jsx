@@ -71,7 +71,7 @@ export default function Pricing() {
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 
-                  bg-gradient-to-r from-[#008080] to-[#f8ba2b] text-black text-xs 
+                  bg-[#008080]  text-black text-xs 
                   font-bold px-4 py-1 rounded-full shadow-lg">
                   🔥 MOST POPULAR
                 </div>
@@ -83,7 +83,7 @@ export default function Pricing() {
               <p className="text-sm opacity-80 mb-6">{plan.duration}</p>
 
               {/* PRICE */}
-              <div className="text-5xl font-black bg-gradient-to-r from-[#008080] to-[#f8ba2b] bg-clip-text text-transparent mb-8">
+              <div className="text-5xl font-black bg-[#008080]  bg-clip-text text-transparent mb-8">
                 {plan.price}
               </div>
 
