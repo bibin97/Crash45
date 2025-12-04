@@ -4,38 +4,50 @@ import { motion } from "framer-motion";
 const MagneticCursor = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [hideCursor, setHideCursor] = useState(false);
+  const [enableCursor, setEnableCursor] = useState(false);
 
+  // Enable cursor only on DESKTOP (>= 1024px)
   useEffect(() => {
+    if (window.innerWidth >= 1024) {
+      setEnableCursor(true);
+    }
+  }, []);
+
+  // Mouse tracking only when enabled
+  useEffect(() => {
+    if (!enableCursor) return;
+
     const handleMouseMove = (e) => {
       setMousePos({ x: e.clientX, y: e.clientY });
 
-      // CHECK ONLY NAVBAR HEIGHT, NOT FULL WIDTH
       const navbar = document.querySelector("nav");
       if (navbar) {
         const rect = navbar.getBoundingClientRect();
-
         if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
-          setHideCursor(true);  // hide inside navbar
+          setHideCursor(true);
         } else {
-          setHideCursor(false); // show everywhere else
+          setHideCursor(false);
         }
       }
     };
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [enableCursor]);
+
+  // If cursor is disabled → render nothing
+  if (!enableCursor) return <></>;
 
   return (
     <>
-      {/* INNER YELLOW DOT */}
+      {/* INNER DOT */}
       <motion.div
         className="fixed pointer-events-none z-[9999]"
         animate={{
           x: mousePos.x - 8,
           y: mousePos.y - 8,
           scale: hideCursor ? 0.5 : 1.4,
-          opacity: hideCursor ? 0 : 1,   // hide in navbar
+          opacity: hideCursor ? 0 : 1,
         }}
         transition={{ type: "spring", stiffness: 500, damping: 28 }}
       >
@@ -45,7 +57,7 @@ const MagneticCursor = () => {
         />
       </motion.div>
 
-      {/* TEAL RING (never hidden) */}
+      {/* OUTER RING */}
       <motion.div
         className="fixed pointer-events-none z-[9998]"
         animate={{

@@ -30,7 +30,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 px-6">
+    <section id="about" className="px-4 sm:px-6 pt-10 pb-10">
       <div className="max-w-6xl mx-auto space-y-24">
 
         {/* Heading */}
