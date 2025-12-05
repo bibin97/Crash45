@@ -43,9 +43,9 @@ export default function Pricing() {
       <div className="max-w-7xl mx-auto space-y-14">
 
         {/* ================= HEADER ================= */}
-        <h2 className="text-center text-4xl md:text-6xl font-bold">
+        <h2 className="text-center text-4xl font-[poppins] md:text-6xl text-[#008080] font-bold">
           Choose Your{" "}
-          <span className="bg-gradient-to-r from-[#008080] to-[#f8ba2b] bg-clip-text text-transparent">
+          <span className="text-[#f8ba2b]">
             Plan
           </span>
         </h2>

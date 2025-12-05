@@ -34,7 +34,7 @@ body h6 {
 
 /* Paragraphs / lists */
 body p,
-body span,
+body ,
 body li {
   color: #1a1f2b !important;
 }
@@ -91,7 +91,7 @@ button:not(.nav-item):hover {
 
 /* Dark text */
 .dark p,
-.dark span,
+.dark ,
 .dark li {
   color: #dce1e8 !important;
 }
@@ -195,4 +195,7 @@ section {
 nav button,
 nav a {
   pointer-events: auto;
+}
+span{
+  color :#000;
 }

@@ -40,7 +40,7 @@ export default function Features() {
 
         <h2 className="text-center text-4xl md:text-6xl font-[poppins] font-bold mb-14">
           What You Get with the{" "}
-          <span className="bg-gradient-to-r from-[#008080] to-[#f8ba2b] bg-clip-text text-transparent">
+          <span className="features">
             C45 Program
           </span>
         </h2>
@@ -56,7 +56,7 @@ export default function Features() {
               className="card p-8 rounded-3xl shadow-xl backdrop-blur-xl"
             >
               <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+              <h3 className="text-xl font-bold mb-3 font-[inter]">{item.title}</h3>
               <p className="opacity-80">{item.desc}</p>
             </motion.div>
           ))}

@@ -71,7 +71,7 @@ export default function About() {
         </div>
 
         {/* How It Works */}
-        <h2 className="text-center text-xl font-bold font-[poppins] mb-14">How It Works</h2>
+        <h2 className="text-center text-4xl font-bold font-[poppins] mb-14">How It Works</h2>
         <div className="space-y-10">
           {howSteps.map((step, i) => (
             <div key={i} className="flex gap-6">
