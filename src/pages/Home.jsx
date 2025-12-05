@@ -38,39 +38,56 @@ export default function Home() {
 
           {/* HEADLINE */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-5xl md:text-6xl text-[#008080] 
-                       font-extrabold leading-tight mb-6 font-[Poppins]"
-          >
-            Full Subject <br /> Full Revision <br /> Full Mastery{" "}
-            <span className="hero block">In Just 45 Hours.</span>
-          </motion.h1>
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 font-[Poppins] text-[#008080]"
+>
+  Full Subject <br />
+  Full Revision <br />
+
+  {/* ★ Full Mastery Highlight Box ★ */}
+  <span className="inline-block bg-[#f8ba2b]/20 border border-[#f8ba2b] px-4 py-1 rounded-xl text-[#008080]">
+    Full Mastery
+  </span>
+
+  <br />
+
+  <span className="hero block">In Just 45 Hours.</span>
+</motion.h1>
+
 
           {/* FEATURES */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="max-w-xl text-base sm:text-lg opacity-90 mb-8 font-[Poppins] "
-          >
-            <div className="flex  items-center gap-2">
-              <Book size={25} className="text-[#008080]" /> <span>Concepts</span>
-            </div>
+         <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.1 }}
+  className="max-w-xl text-base sm:text-lg opacity-90 mb-8 font-[Poppins]"
+>
+  <div className="flex items-center gap-8 flex-wrap">
 
-            <div className="flex items-center gap-2">
-              <FileText size={25} className="text-[#008080]" /> <span>PYQs</span>
-            </div>
+    <div className="flex items-center gap-2">
+      <Book size={25} className="text-[#008080]" />
+      <span>Concepts</span>
+    </div>
 
-            <div className="flex items-center gap-2">
-              <HelpCircle size={25} className="text-[#008080]" /> <span>Model Qs</span>
-            </div>
+    <div className="flex items-center gap-2">
+      <FileText size={25} className="text-[#008080]" />
+      <span>PYQs</span>
+    </div>
 
-            <div className="flex items-center gap-2">
-              <FlaskRound size={25} className="text-[#008080]" /> <span>Tests</span>
-            </div>
-          </motion.div>
+    <div className="flex items-center gap-2">
+      <HelpCircle size={25} className="text-[#008080]" />
+      <span>Model Qs</span>
+    </div>
+
+    <div className="flex items-center gap-2">
+      <FlaskRound size={25} className="text-[#008080]" />
+      <span>Tests</span>
+    </div>
+
+  </div>
+</motion.div>
 
           {/* CTA + TRUST DETAILS */}
           <motion.div
@@ -132,7 +149,7 @@ export default function Home() {
     animate={{ y: [0, -8, 0] }}
     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
     className="absolute top-0 left-1/2 -translate-x-1/2
-               px-5 py-3 w-[230px] rounded-2xl bg-white/60 backdrop-blur-xl 
+               px-5 py-6 w-[230px] rounded-2xl bg-white/60 backdrop-blur-xl 
                shadow-lg text-[#008080] text-[15px] font-semibold text-center"
   >
     Learning Today for a Better Tomorrow.
@@ -146,7 +163,7 @@ export default function Home() {
     <motion.div
       animate={{ y: [0, -8, 0] }}
       transition={{ duration: 3, repeat: Infinity }}
-      className="px-5 py-8 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
+      className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
                  shadow-lg text-[#008080] text-[15px] font-semibold text-center"
     >
       Master Concepts. Master Exams.
@@ -156,7 +173,7 @@ export default function Home() {
     <motion.div
       animate={{ y: [0, -10, 0] }}
       transition={{ duration: 3.2, repeat: Infinity }}
-      className="px-8 py-8 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
+      className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
                  shadow-lg text-[#008080] text-[15px] font-semibold text-center"
     >
       Progress, Not Perfection.
@@ -166,13 +183,13 @@ export default function Home() {
 
 
   {/* ⭐ RIGHT SIDE (2 QUOTES) */}
-<div className="absolute right-[-50px] top-32 flex flex-col gap-10">
+<div className="absolute right-[-50px] top-32 flex flex-col gap-12">
 
   {/* R1 */}
   <motion.div
     animate={{ y: [0, -8, 0] }}
     transition={{ duration: 3, repeat: Infinity }}
-    className="px-5 py-8 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
+    className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
                shadow-lg text-[#008080] text-[15px] font-semibold text-center"
   >
     Small Steps → Big Results.
@@ -182,7 +199,7 @@ export default function Home() {
   <motion.div
     animate={{ y: [0, -10, 0] }}
     transition={{ duration: 3.2, repeat: Infinity }}
-    className="px-5 py-8 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
+    className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
                shadow-lg text-[#008080] text-[15px] font-semibold text-center"
   >
     Consistency Creates Champions.
