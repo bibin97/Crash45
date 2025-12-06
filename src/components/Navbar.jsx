@@ -33,7 +33,7 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
   whileHover={{ scale: 1.05 }}
   onClick={() => scrollToSection(scrollRefs.home)}
 >
-  <h1 className="text-teal-500">CRASH <span className="text-yellow-400">45</span></h1>
+  <h1 className="text-teal-500">CRASH <span>45</span></h1>
 </motion.div>
 
 

@@ -199,3 +199,61 @@ nav a {
 span{
   color :#000;
 }
+/* --- PREMIUM Full Mastery Glow Pill --- */
+
+.fullmastery-pill {
+  position: relative;
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  font-weight: 800;
+  border-radius: 0.75rem;
+  color: #004d48;
+  background: linear-gradient(90deg, rgba(248,186,43,0.18), rgba(0,167,157,0.12));
+  border: 1px solid rgba(248,186,43,0.35);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+/* Outer animated halo */
+.fullmastery-pill::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle,
+    rgba(248,186,43,0.35),
+    rgba(0,167,157,0.25),
+    transparent
+  );
+  filter: blur(18px);
+  opacity: 0.8;
+  animation: masteryBreath 2.8s ease-in-out infinite;
+  z-index: -1;
+}
+
+/* Breathing glow animation */
+@keyframes masteryBreath {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.06); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.6; }
+}
+
+/* Hover boost */
+.fullmastery-pill:hover::after {
+  filter: blur(26px);
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .fullmastery-pill {
+    padding: 0.28rem 0.75rem;
+    font-size: 0.9rem;
+  }
+  .fullmastery-pill::after {
+    inset: -6px;
+    filter: blur(14px);
+  }
+}
