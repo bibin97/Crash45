@@ -136,94 +136,93 @@ export default function Home() {
 
         </div>
 
-        {/* RIGHT SIDE — NOW CONTAINS ITS OWN GRADIENT */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          className="relative flex justify-center md:justify-end items-center h-full
-                     md:-translate-y-12 -translate-y-10 md:-translate-x-10 lg:-translate-x-14"
-        >
+       {/* ⭐ RIGHT SIDE WITH CLIPPED GRADIENT */}
+<motion.div
+  initial={{ opacity: 0, x: 40 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.7 }}
+  className="relative flex justify-center md:justify-end items-center h-full
+             md:-translate-y-12 -translate-y-10 md:-translate-x-10 lg:-translate-x-14
+             rounded-3xl overflow-hidden"   // ⭐ THIS CLIPS GRADIENT EXACTLY
+>
 
-          {/* ⭐ GRADIENT ONLY BEHIND STUDENT + QUOTES */}
-   {/* ⭐ RADIAL GRADIENT BEHIND STUDENT */}
-<div
-  className="absolute inset-0 w-full h-full -z-10 pointer-events-none"
-  style={{
-    background: `
-      radial-gradient(circle at 160% 45%,
-        rgba(0,128,128,0.22),
-        rgba(248,186,43,0.22) 45%,
-        rgba(255,255,255,1) 95%)
-    `
-  }}
-></div>
-
-
-
-
+  {/* ⭐ GRADIENT ONLY INSIDE THIS BOX */}
+  <div
+    className="absolute inset-0 -z-10"
+    style={{
+      background: `
+        radial-gradient(
+          circle at 70% 50%,
+          rgba(0,128,128,0.18) 0%,
+          rgba(248,186,43,0.18) 45%,
+          rgba(255,255,255,1) 90%
+        )
+      `
+    }}
+  ></div>
 
 
-          {/* TOP QUOTE */}
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 3, repeat: Infinity }}
-            className="absolute top-0 left-1/2 -translate-x-1/2
-                       px-5 py-6 w-[230px] rounded-2xl bg-white/60 backdrop-blur-xl 
-                       shadow-lg text-[#008080] text-[15px] font-semibold text-center"
-          >
-            Learning Today for a Better Tomorrow.
-          </motion.div>
+  {/* ⭐ TOP QUOTE */}
+  <motion.div
+    animate={{ y: [0, -8, 0] }}
+    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+    className="absolute top-0 left-1/2 -translate-x-1/2
+               px-5 py-6 w-[230px] rounded-2xl bg-white/60 backdrop-blur-xl 
+               shadow-lg text-[#008080] text-[15px] font-semibold text-center"
+  >
+    Learning Today for a Better Tomorrow.
+  </motion.div>
 
-          {/* LEFT QUOTES */}
-          <div className="absolute left-0 top-32 flex flex-col gap-10">
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
-                         shadow-lg text-[#008080] text-[15px] font-semibold text-center"
-            >
-              Master Concepts. Master Exams.
-            </motion.div>
+  {/* ⭐ LEFT QUOTES */}
+  <div className="absolute left-0 top-32 flex flex-col gap-10">
+    <motion.div
+      animate={{ y: [0, -8, 0] }}
+      transition={{ duration: 3, repeat: Infinity }}
+      className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
+                 shadow-lg text-[#008080] text-[15px] font-semibold text-center"
+    >
+      Master Concepts. Master Exams.
+    </motion.div>
 
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3.2, repeat: Infinity }}
-              className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
-                         shadow-lg text-[#008080] text-[15px] font-semibold text-center"
-            >
-              Progress, Not Perfection.
-            </motion.div>
-          </div>
+    <motion.div
+      animate={{ y: [0, -10, 0] }}
+      transition={{ duration: 3.2, repeat: Infinity }}
+      className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
+                 shadow-lg text-[#008080] text-[15px] font-semibold text-center"
+    >
+      Progress, Not Perfection.
+    </motion.div>
+  </div>
 
-          {/* RIGHT QUOTES */}
-          <div className="absolute right-[-50px] top-32 flex flex-col gap-12">
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
-                         shadow-lg text-[#008080] text-[15px] font-semibold text-center"
-            >
-              Small Steps → Big Results.
-            </motion.div>
+  {/* ⭐ RIGHT QUOTES */}
+  <div className="absolute right-0 top-32 flex flex-col gap-12">
+    <motion.div
+      animate={{ y: [0, -8, 0] }}
+      transition={{ duration: 3, repeat: Infinity }}
+      className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
+                 shadow-lg text-[#008080] text-[15px] font-semibold text-center"
+    >
+      Small Steps → Big Results.
+    </motion.div>
 
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3.2, repeat: Infinity }}
-              className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
-                         shadow-lg text-[#008080] text-[15px] font-semibold text-center"
-            >
-              Consistency Creates Champions.
-            </motion.div>
-          </div>
+    <motion.div
+      animate={{ y: [0, -10, 0] }}
+      transition={{ duration: 3.2, repeat: Infinity }}
+      className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
+                 shadow-lg text-[#008080] text-[15px] font-semibold text-center"
+    >
+      Consistency Creates Champions.
+    </motion.div>
+  </div>
 
-          {/* HERO IMAGE */}
-          <img
-            src={homeimg}
-            alt="Crash 45 Study Illustration"
-            className="w-full max-w-sm md:max-w-md lg:max-w-lg drop-shadow-xl relative z-10"
-          />
-        </motion.div>
+  {/* ⭐ MAIN IMAGE */}
+  <img
+    src={homeimg}
+    alt="Crash 45 Study Illustration"
+    className="w-full max-w-sm md:max-w-md lg:max-w-lg drop-shadow-xl relative z-10"
+  />
+</motion.div>
+
       </div>
     </section>
   );
