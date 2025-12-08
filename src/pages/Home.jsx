@@ -27,11 +27,7 @@ export default function Home() {
           >
             Full Subject <br />
             Full Revision <br />
-
-            <span className="inline-block fullmastery-pill px-4 py-1 mt-2 rounded-xl">
-              Full Mastery
-            </span>
-
+            Full Mastery
             <br />
             <span className="hero block">In Just 45 Hours.</span>
           </motion.h1>
@@ -44,26 +40,31 @@ export default function Home() {
             className="max-w-xl text-base sm:text-lg opacity-90 mb-8 font-[Poppins]"
           >
             <div className="flex items-center gap-4 flex-wrap">
+
               <div className="flex items-center gap-1">
                 <Book size={20} className="text-[#008080]" />
                 <span>Concepts</span>
               </div>
+
               <div className="flex items-center gap-1">
                 <FileText size={20} className="text-[#008080]" />
                 <span>PYQs</span>
               </div>
+
               <div className="flex items-center gap-1">
                 <HelpCircle size={20} className="text-[#008080]" />
                 <span>Model Qs</span>
               </div>
+
               <div className="flex items-center gap-1">
                 <FlaskRound size={20} className="text-[#008080]" />
                 <span>Tests</span>
               </div>
+
             </div>
           </motion.div>
 
-          {/* CTA BUTTON + TRUST POINTS */}
+          {/* CTA + TRUST DETAILS */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -71,30 +72,34 @@ export default function Home() {
           >
             <button
               className="group bg-[#f6b410] hover:bg-[#ffbf00]
-                         text-black font-semibold px-7 py-3 rounded-full
-                         shadow-md transition-all duration-300 w-fit
-                         flex items-center gap-2 hover:-translate-y-1 hover:shadow-lg relative overflow-hidden"
+                        text-black font-semibold px-7 py-3 rounded-full
+                        shadow-md transition-all duration-300 w-fit
+                        flex items-center gap-2 hover:-translate-y-1 hover:shadow-lg relative overflow-hidden"
             >
-              Book Your Seat Now 🔥
+              Book Your Seat Now 
             </button>
 
-            <p className="text-sm mt-2 opacity-70 font-[Poppins]">
+            <p className="text-md mt-2 opacity-70 font-[Poppins]">
               Limited seats. First come first serve.
             </p>
 
             <div className="mt-3 flex flex-col gap-2 font-[Poppins] text-[15px]">
+
               <div className="flex items-start gap-2">
-                <span className="w-3 h-3 rounded-full bg-[#008080] mt-1 shadow-md"></span>
+                <span className="w-3 h-3 rounded-full bg-black mt-1 shadow-md"></span>
                 <p className="opacity-80">Trusted by 3700+ Parents</p>
               </div>
+
               <div className="flex items-start gap-2">
-                <span className="w-3 h-3 rounded-full bg-[#008080] mt-1 shadow-md"></span>
+                <span className="w-3 h-3 rounded-full bg-black mt-1 shadow-md"></span>
                 <p className="opacity-80">Designed by Top Educators</p>
               </div>
+
               <div className="flex items-start gap-2">
-                <span className="w-3 h-3 rounded-full bg-[#008080] mt-1 shadow-md"></span>
+                <span className="w-3 h-3 rounded-full bg-black mt-1 shadow-md"></span>
                 <p className="opacity-80">Avg Improvement: +47 Marks in 45 Hours</p>
               </div>
+
             </div>
           </motion.div>
 
@@ -114,7 +119,12 @@ export default function Home() {
                   hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]
                 "
               >
-                <div className="text-3xl font-extrabold bg-[#008080] bg-clip-text text-transparent">
+                <div
+                  className="
+                    text-3xl font-extrabold
+                    bg-[#008080] bg-clip-text text-transparent
+                  "
+                >
                   {item.number}
                 </div>
 
@@ -133,95 +143,27 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-
         </div>
 
-       {/* ⭐ RIGHT SIDE WITH CLIPPED GRADIENT */}
+       {/* RIGHT SIDE — STUDENT IMAGE MOVED UP */}
 <motion.div
   initial={{ opacity: 0, x: 40 }}
   whileInView={{ opacity: 1, x: 0 }}
   transition={{ duration: 0.7 }}
-  className="relative flex justify-center md:justify-end items-center h-full
-             md:-translate-y-12 -translate-y-10 md:-translate-x-10 lg:-translate-x-14
-             rounded-3xl overflow-hidden"   // ⭐ THIS CLIPS GRADIENT EXACTLY
+  className="
+    relative flex justify-center md:justify-end items-start 
+    h-full 
+    md:-translate-y-24   /* ⬆️ Move image up on medium+ screens */
+    -translate-y-10      /* Slight lift on mobile */
+  "
 >
-
-  {/* ⭐ GRADIENT ONLY INSIDE THIS BOX */}
-  <div
-    className="absolute inset-0 -z-10"
-    style={{
-      background: `
-        radial-gradient(
-          circle at 70% 50%,
-          rgba(0,128,128,0.18) 0%,
-          rgba(248,186,43,0.18) 45%,
-          rgba(255,255,255,1) 90%
-        )
-      `
-    }}
-  ></div>
-
-
-  {/* ⭐ TOP QUOTE */}
-  <motion.div
-    animate={{ y: [0, -8, 0] }}
-    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-    className="absolute top-0 left-1/2 -translate-x-1/2
-               px-5 py-6 w-[230px] rounded-2xl bg-white/60 backdrop-blur-xl 
-               shadow-lg text-[#008080] text-[15px] font-semibold text-center"
-  >
-    Learning Today for a Better Tomorrow.
-  </motion.div>
-
-  {/* ⭐ LEFT QUOTES */}
-  <div className="absolute left-0 top-32 flex flex-col gap-10">
-    <motion.div
-      animate={{ y: [0, -8, 0] }}
-      transition={{ duration: 3, repeat: Infinity }}
-      className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
-                 shadow-lg text-[#008080] text-[15px] font-semibold text-center"
-    >
-      Master Concepts. Master Exams.
-    </motion.div>
-
-    <motion.div
-      animate={{ y: [0, -10, 0] }}
-      transition={{ duration: 3.2, repeat: Infinity }}
-      className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
-                 shadow-lg text-[#008080] text-[15px] font-semibold text-center"
-    >
-      Progress, Not Perfection.
-    </motion.div>
-  </div>
-
-  {/* ⭐ RIGHT QUOTES */}
-  <div className="absolute right-0 top-32 flex flex-col gap-12">
-    <motion.div
-      animate={{ y: [0, -8, 0] }}
-      transition={{ duration: 3, repeat: Infinity }}
-      className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
-                 shadow-lg text-[#008080] text-[15px] font-semibold text-center"
-    >
-      Small Steps → Big Results.
-    </motion.div>
-
-    <motion.div
-      animate={{ y: [0, -10, 0] }}
-      transition={{ duration: 3.2, repeat: Infinity }}
-      className="px-5 py-6 w-[220px] rounded-2xl bg-white/60 backdrop-blur-xl 
-                 shadow-lg text-[#008080] text-[15px] font-semibold text-center"
-    >
-      Consistency Creates Champions.
-    </motion.div>
-  </div>
-
-  {/* ⭐ MAIN IMAGE */}
   <img
     src={homeimg}
     alt="Crash 45 Study Illustration"
     className="w-full max-w-sm md:max-w-md lg:max-w-lg drop-shadow-xl relative z-10"
   />
 </motion.div>
+
 
       </div>
     </section>
