@@ -8,6 +8,11 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
     { name: "Home", ref: scrollRefs.home },
     { name: "About", ref: scrollRefs.about },
     { name: "Features", ref: scrollRefs.features },
+
+    // ✅ Newly added items
+    { name: "Why Us", ref: scrollRefs.whyus },
+    { name: "Who Is It For", ref: scrollRefs.who },
+
     { name: "Pricing", ref: scrollRefs.pricing },
   ];
 
@@ -27,15 +32,15 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
       "
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-       {/* LOGO */}
-<motion.div
-  className="text-2xl font-black cursor-pointer flex items-center gap-1"
-  whileHover={{ scale: 1.05 }}
-  onClick={() => scrollToSection(scrollRefs.home)}
->
-  <h1 className="text-teal-500">CRASH <span>45</span></h1>
-</motion.div>
 
+        {/* LOGO */}
+        <motion.div
+          className="text-2xl font-black cursor-pointer flex items-center gap-1"
+          whileHover={{ scale: 1.05 }}
+          onClick={() => scrollToSection(scrollRefs.home)}
+        >
+          <h1 className="text-teal-500">CRASH <span>45</span></h1>
+        </motion.div>
 
         {/* DESKTOP MENU */}
         <div className="hidden md:flex items-center gap-8">
@@ -56,7 +61,7 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
             >
               {item.name}
 
-              {/* Underline hover animation */}
+              {/* underline */}
               <span
                 className="
                   absolute left-0 -bottom-1 
@@ -105,6 +110,7 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
       {/* MOBILE MENU */}
       {menuOpen && (
         <div className="md:hidden px-6 py-4 space-y-4 bg-transparent">
+
           {navItems.map((item) => (
             <motion.button
               key={item.name}

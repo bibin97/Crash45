@@ -6,33 +6,30 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Features from "./pages/Features";
 import Pricing from "./pages/Pricing";
+import Whyus from "./pages/Whyus";
+import Who from "./pages/Who";
+
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(false); // Light mode default
+  const [darkMode, setDarkMode] = useState(false);
 
-  // Apply theme to <html> (NOT body)
+  // Apply theme class to <html>
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.classList.toggle("dark", darkMode);
   }, [darkMode]);
 
-  // Section references
-  const home = useRef(null);
-  const about = useRef(null);
-  const features = useRef(null);
-  const how = useRef(null);
-  const pricing = useRef(null);
-
-  const scrollRefs = { home, about, features, how, pricing };
+  // ✅ Section references (ONLY ONE DECLARATION)
+  const scrollRefs = {
+    home: useRef(null),
+    about: useRef(null),
+    features: useRef(null),
+    whyus: useRef(null),
+    who: useRef(null),
+    pricing: useRef(null),
+  };
 
   return (
     <div>
-      {/* Cursor */}
-     
-
       {/* Navbar */}
       <Navbar
         scrollRefs={scrollRefs}
@@ -42,21 +39,31 @@ export default function App() {
 
       {/* Sections */}
       <main className="pt-28">
-        <section ref={home}>
+
+        <section ref={scrollRefs.home}>
           <Home />
         </section>
 
-        <section ref={about}>
+        <section ref={scrollRefs.about}>
           <About />
         </section>
 
-        <section ref={features}>
+        <section ref={scrollRefs.features}>
           <Features />
         </section>
 
-        <section ref={pricing}>
+        <section ref={scrollRefs.whyus}>
+          <Whyus />
+        </section>
+
+        <section ref={scrollRefs.who}>
+          <Who />
+        </section>
+
+        <section ref={scrollRefs.pricing}>
           <Pricing />
         </section>
+
       </main>
     </div>
   );

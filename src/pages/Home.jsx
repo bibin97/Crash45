@@ -86,17 +86,17 @@ export default function Home() {
             <div className="mt-3 flex flex-col gap-2 font-[Poppins] text-[15px]">
 
               <div className="flex items-start gap-2">
-                <span className="w-3 h-3 rounded-full bg-black mt-1 shadow-md"></span>
+                <span className="w-3 h-3 rounded-full bg-black dark:bg-white mt-1 shadow-md"></span>
                 <p className="opacity-80">Trusted by 3700+ Parents</p>
               </div>
 
               <div className="flex items-start gap-2">
-                <span className="w-3 h-3 rounded-full bg-black mt-1 shadow-md"></span>
+                <span className="w-3 h-3 rounded-full bg-black dark:bg-white mt-1 shadow-md"></span>
                 <p className="opacity-80">Designed by Top Educators</p>
               </div>
 
               <div className="flex items-start gap-2">
-                <span className="w-3 h-3 rounded-full bg-black mt-1 shadow-md"></span>
+                <span className="w-3 h-3 rounded-full bg-black dark:bg-white mt-1 shadow-md"></span>
                 <p className="opacity-80">Avg Improvement: +47 Marks in 45 Hours</p>
               </div>
 
@@ -122,7 +122,9 @@ export default function Home() {
                 <div
                   className="
                     text-3xl font-extrabold
-                    bg-[#008080] bg-clip-text text-transparent
+                    bg-[#008080] bg-clip-text text-transparent dark:bg-white dark:text-clip
+                    group-hover:brightness-110
+                    transition-all duration-300
                   "
                 >
                   {item.number}
@@ -137,7 +139,7 @@ export default function Home() {
                     w-6 h-1 bg-[#008080]
                     mx-auto mt-2 rounded-full opacity-60
                     group-hover:w-8 group-hover:opacity-90
-                    transition-all duration-300
+                    transition-all duration-300 dark:bg-white
                   "
                 ></div>
               </motion.div>

@@ -196,9 +196,18 @@ nav button,
 nav a {
   pointer-events: auto;
 }
-span{
-  color :#000;
+ :root span {
+  color: #000;
 }
+
+ .dark span {
+  color: #fff;
+} 
+/* .dark .card, 
+.dark .card * {
+  color: #ffffff !important;
+} */
+
 /* --- PREMIUM Full Mastery Glow Pill --- */
 
 .fullmastery-pill {
@@ -256,4 +265,64 @@ span{
     inset: -6px;
     filter: blur(14px);
   }
+}
+/* ===========================================================
+   UNIVERSAL ABOUT CARD STYLING (LIGHT + DARK MODE)
+=========================================================== */
+
+.about-card {
+  border-radius: 20px !important;
+  padding: 28px !important;
+  border: 1px solid rgba(0,0,0,0.1) !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08) !important;
+  transition: 0.3s ease-in-out !important;
+}
+
+/* Light Mode */
+body .about-card {
+  background: #ffffff !important;
+  color: #071525 !important;
+}
+
+/* Dark Mode */
+.dark .about-card {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #e8ecf3 !important;
+}
+
+/* Title inside card */
+.about-card h3 {
+  color: #008080 !important;  /* teal */
+  font-weight: 700 !important;
+}
+
+.dark .about-card h3 {
+  color: #4fd1c5 !important;  /* lighter teal for dark mode */
+}
+
+/* Bullet text */
+.about-card li,
+.about-card p,
+.about-card span {
+  color: inherit !important; /* automatically adjusts for dark/light */
+}
+
+/* Hover effect */
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.15) !important;
+}
+/* ===========================================================
+   SAFE UNIVERSAL SPAN COLOR FIX (DO NOT OVERRIDE HEADING COLORS)
+=========================================================== */
+
+/* Light mode → span text black */
+body span:not(.text-transparent):not(.special-span) {
+  color: #000 !important;
+}
+
+/* Dark mode → span text white */
+.dark span:not(.text-transparent):not(.special-span) {
+  color: #ffffff !important;
 }

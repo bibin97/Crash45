@@ -1,63 +1,96 @@
 import { motion } from "framer-motion";
+import {
+  UserCheck,
+  BookOpenCheck,
+  NotebookPen,
+  FileCheck,
+  ClipboardList,
+  FolderOpen,
+  LineChart,
+  Users,
+} from "lucide-react";
 
 export default function Features() {
-  const features = [
+  const items = [
     {
-      icon: "👨‍🏫",
-      title: "Personal 1-to-1 Mentor",
+      title: "1:1 Personal Mentor",
       desc: "Learn directly with a mentor who understands your strengths and weaknesses.",
+      icon: <UserCheck size={32} className="text-teal-500" />,
     },
     {
-      icon: "⚡",
-      title: "45-Hour Smart Revision",
-      desc: "A structured high-speed plan designed to maximise score improvement.",
+      title: "Full Syllabus Completion",
+      desc: "Complete structured coverage of every chapter with expert support.",
+      icon: <BookOpenCheck size={32} className="text-teal-500" />,
     },
     {
-      icon: "📝",
-      title: "Mock Tests + PYQs",
-      desc: "Timed practice sessions, previous year questions and performance evaluation.",
+      title: "Concept Notes & Summaries",
+      desc: "Beautifully simplified notes and revision-ready summaries.",
+      icon: <NotebookPen size={32} className="text-teal-500" />,
     },
     {
-      icon: "📚",
-      title: "Concept Clarity Boost",
-      desc: "Understand every topic deeply using simplified explanations.",
+      title: "Chapter Tests + Full Tests",
+      desc: "Weekly chapter-level tests and mock full-syllabus tests.",
+      icon: <FileCheck size={32} className="text-teal-500" />,
     },
     {
-      icon: "📊",
-      title: "Weekly Progress Tracking",
-      desc: "Track improvements every week with clear reports.",
+      title: "Previous Year Questions Solved",
+      desc: "Complete step-by-step solutions for past 5–10 years’ questions.",
+      icon: <ClipboardList size={32} className="text-teal-500" />,
     },
     {
-      icon: "🎯",
-      title: "Exam Strategy Training",
-      desc: "Master time management and high-scoring answer-writing techniques.",
+      title: "Model Question Bank",
+      desc: "Practice with exam-pattern high-quality model question sets.",
+      icon: <FolderOpen size={32} className="text-teal-500" />,
+    },
+    {
+      title: "Daily Progress Tracking",
+      desc: "Monitor improvement every day with easy-to-read reports.",
+      icon: <LineChart size={32} className="text-teal-500" />,
+    },
+    {
+      title: "Parent Feedback Reports",
+      desc: "Weekly updates sent to parents for complete transparency.",
+      icon: <Users size={32} className="text-teal-500" />,
     },
   ];
 
   return (
-    <section id="features" className="py-20 px-6">
-      <div className="max-w-7xl mx-auto">
+    <section id="features" className="py-24 px-6">
+      <div className="max-w-7xl mx-auto text-center">
+        
+        {/* SECTION TITLE */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-extrabold font-[Poppins] mb-14"
+        >
+          What You Get Inside {" "}
+          <span className="text-teal-600 dark:text-teal-300">Crash 45</span>
+        </motion.h2>
 
-        <h2 className="text-center text-4xl md:text-6xl font-[poppins] font-bold mb-14">
-          What You Get with the{" "}
-          <span className="features">
-            C45 Program
-          </span>
-        </h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((item, i) => (
+        {/* FEATURES GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {items.map((item, index) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="card p-8 rounded-3xl shadow-xl backdrop-blur-xl"
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="about-card rounded-2xl p-6 shadow-md 
+                         bg-white dark:bg-[rgba(255,255,255,0.06)]
+                         border border-gray-200 dark:border-white/10
+                         hover:shadow-xl transition-all cursor-pointer"
             >
-              <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="text-xl font-bold mb-3 font-[inter]">{item.title}</h3>
-              <p className="opacity-80">{item.desc}</p>
+              <div className="mb-4">{item.icon}</div>
+
+              <h3 className="font-semibold text-lg text-[#008080] dark:text-teal-300 mb-2">
+                {item.title}
+              </h3>
+
+              <p className="text-sm text-gray-700 dark:text-gray-300">
+                {item.desc}
+              </p>
             </motion.div>
           ))}
         </div>
