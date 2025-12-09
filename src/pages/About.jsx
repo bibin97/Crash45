@@ -7,6 +7,8 @@ export default function About() {
       title: "Concept Learning",
       hours: "10–12 hours",
       bullets: ["Full chapter explanations", "Doubt clearing", "Key formulas + summaries"],
+      colorStart: "#00a79d",
+      colorEnd: "#f8ba2b",
       icon: "📘",
     },
     {
@@ -14,6 +16,8 @@ export default function About() {
       title: "PYQs Practice",
       hours: "8–10 hours",
       bullets: ["Past 5–10 year board questions solved", "Pattern understanding", "Weightage awareness"],
+      colorStart: "#2b9bd7",
+      colorEnd: "#78d3b8",
       icon: "📝",
     },
     {
@@ -21,6 +25,8 @@ export default function About() {
       title: "Model Question Practice",
       hours: "12–14 hours",
       bullets: ["Exam-pattern model questions", "Mixed difficulty", "Time-bound drills"],
+      colorStart: "#8b5cf6",
+      colorEnd: "#f97316",
       icon: "🎯",
     },
     {
@@ -28,28 +34,30 @@ export default function About() {
       title: "Chapter Tests + Full-Length Tests",
       hours: "8–10 hours",
       bullets: ["Chapter-wise tests", "Final mock tests", "Performance analysis"],
+      colorStart: "#f59e0b",
+      colorEnd: "#ef4444",
       icon: "🧪",
     },
   ];
 
-  // Up/down alignment
   const offsets = [0, 40, 0, 40];
 
   return (
     <section id="about" className="px-4 sm:px-6 pt-16 pb-24">
       <div className="max-w-7xl mx-auto">
 
-        {/* ---------- Heading ---------- */}
+        {/* Heading */}
         <motion.h2
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
           className="text-center font-[Poppins] text-4xl md:text-5xl font-extrabold mb-8"
         >
-          How Crash45 <span className="text-[#008080]">Works</span>
+          How Crash45{" "}
+          <span className="text-[#008080]">Works</span>
         </motion.h2>
 
-        {/* ----------- Curve Line ------------ */}
+        {/* Curve Line */}
         <div className="relative mt-10 mb-20">
           <svg viewBox="0 0 1200 300" className="w-full h-[220px]" preserveAspectRatio="none">
             <path
@@ -68,7 +76,7 @@ export default function About() {
           </svg>
         </div>
 
-        {/* ---------- Cards ---------- */}
+        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mt-10">
           {steps.map((step, index) => (
             <motion.div
@@ -87,28 +95,32 @@ export default function About() {
                 if (curve) curve.classList.remove("flow");
               }}
             >
-              {/* Circle Number */}
+              {/* Number Circle (unique color for each card) */}
               <div
                 className="w-20 h-20 rounded-full shadow-xl flex items-center justify-center mb-5"
-                style={{ background: "linear-gradient(135deg, #00a79d, #f8ba2b)" }}
+                style={{
+                  background: `linear-gradient(135deg, ${step.colorStart}, ${step.colorEnd})`,
+                }}
               >
-                <span className="text-black font-extrabold text-lg">{step.id}</span>
+                <span className="text-black dark:text-white font-extrabold text-lg">
+                  {step.id}
+                </span>
               </div>
 
               {/* Card */}
-              <div className="bg-white rounded-2xl shadow-lg p-6 w-full border border-gray-200 hover:shadow-2xl transition-all duration-300">
+              <div className="bg-white dark:bg-white/10 rounded-2xl shadow-lg p-6 w-full border border-gray-200 dark:border-white/10 hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-2xl">{step.icon}</span>
                   {step.hours && (
-                    <span className="text-sm text-neutral-600">{step.hours}</span>
+                    <span className="text-sm text-neutral-700 dark:text-white">{step.hours}</span>
                   )}
                 </div>
 
-                <h3 className="text-lg font-[Poppins] font-semibold mb-3 text-[#008080]">
+                <h3 className="text-lg font-[Poppins] font-semibold mb-3 text-[#008080] dark:text-teal-300">
                   {step.title}
                 </h3>
 
-                <ul className="text-neutral-800 space-y-2 text-sm">
+                <ul className="text-black dark:text-white space-y-2 text-sm">
                   {step.bullets.map((b, i) => (
                     <li key={i} className="flex gap-2">
                       <span className="font-bold">•</span> {b}
@@ -121,7 +133,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* Wave Animation */}
+      {/* Wave animation */}
       <style>{`
         .flow {
           animation: waveMove 1.6s linear infinite;
