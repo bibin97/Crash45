@@ -57,6 +57,31 @@ export default function About() {
           <span className="text-[#008080]">Works</span>
         </motion.h2>
 
+        {/* Gradient DEFINITIONS */}
+        <svg width="0" height="0">
+          <defs>
+            <linearGradient id="defaultLine" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#baf2e9" />
+              <stop offset="100%" stopColor="#a0e4db" />
+            </linearGradient>
+
+            {steps.map((step, index) => (
+              <linearGradient
+                key={index}
+                id={`hoverGrad-${index}`}
+                x1="0"
+                y1="0"
+                x2="1200"
+                y2="0"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0%" stopColor={step.colorStart} />
+                <stop offset="100%" stopColor={step.colorEnd} />
+              </linearGradient>
+            ))}
+          </defs>
+        </svg>
+
         {/* Curve Line */}
         <div className="relative mt-10 mb-20">
           <svg viewBox="0 0 1200 300" className="w-full h-[220px]" preserveAspectRatio="none">
@@ -64,13 +89,13 @@ export default function About() {
               id="mainCurve"
               d="M 40 200 C 220 20, 380 20, 520 120 C 660 220, 820 220, 1160 60"
               fill="none"
-              stroke="#86d8d0"
+              stroke="url(#defaultLine)"
               strokeWidth="10"
-              strokeOpacity="0.35"
+              strokeOpacity="0.85"
               strokeLinecap="round"
               style={{
                 strokeDasharray: 1800,
-                transition: "all 0.3s ease",
+                transition: "stroke 0.35s ease, filter 0.25s ease",
               }}
             />
           </svg>
@@ -88,14 +113,24 @@ export default function About() {
               style={{ marginTop: offsets[index] }}
               onMouseEnter={() => {
                 const curve = document.getElementById("mainCurve");
-                if (curve) curve.classList.add("flow");
+                if (curve) {
+                  curve.style.stroke = `url(#hoverGrad-${index})`;
+                  curve.style.strokeOpacity = "1";
+                  curve.style.filter = "brightness(1.8)";
+                  curve.classList.add("flow");
+                }
               }}
               onMouseLeave={() => {
                 const curve = document.getElementById("mainCurve");
-                if (curve) curve.classList.remove("flow");
+                if (curve) {
+                  curve.style.stroke = "url(#defaultLine)";
+                  curve.style.strokeOpacity = "0.85";
+                  curve.style.filter = "brightness(1)";
+                  curve.classList.remove("flow");
+                }
               }}
             >
-              {/* Number Circle (unique color for each card) */}
+              {/* Number Circle */}
               <div
                 className="w-20 h-20 rounded-full shadow-xl flex items-center justify-center mb-5"
                 style={{

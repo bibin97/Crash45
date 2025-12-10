@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Menu } from "lucide-react"; // ✅ proper icon
 
 export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,8 +11,8 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
     { name: "Features", ref: scrollRefs.features },
     { name: "Why Us", ref: scrollRefs.whyus },
     { name: "Who Is It For", ref: scrollRefs.who },
-    { name: "FAQ", ref: scrollRefs.faq }, // ✅ FAQ Added Properly
-    {name: "Testimonials", ref: scrollRefs.testimonials},
+    { name: "FAQ", ref: scrollRefs.faq },
+    { name: "Testimonials", ref: scrollRefs.testimonials },
     { name: "Pricing", ref: scrollRefs.pricing },
   ];
 
@@ -41,6 +42,20 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
           <h1 className="text-teal-500">CRASH <span>45</span></h1>
         </motion.div>
 
+        {/* THEME TOGGLE (ALWAYS IN NAVBAR) */}
+        <motion.button
+          onClick={() => setDarkMode(!darkMode)}
+          className="md:hidden w-10 h-10 flex items-center justify-center rounded-full transition mr-4"
+          style={{
+            backgroundColor: darkMode ? "#f8ba2b" : "#008080",
+            color: darkMode ? "black" : "white",
+          }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          {darkMode ? "☀️" : "🌙"}
+        </motion.button>
+
         {/* DESKTOP MENU */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
@@ -59,7 +74,6 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
             >
               {item.name}
 
-              {/* Animated underline */}
               <span
                 className="
                   absolute left-0 -bottom-1 
@@ -72,7 +86,7 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
             </motion.button>
           ))}
 
-          {/* THEME TOGGLE */}
+          {/* DESKTOP THEME TOGGLE */}
           <motion.button
             onClick={() => setDarkMode(!darkMode)}
             className="w-10 h-10 flex items-center justify-center rounded-full transition"
@@ -99,15 +113,19 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
         {/* MOBILE MENU BUTTON */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-2xl"
+          className="md:hidden"
         >
-          ☰
+          <Menu 
+            size={28} 
+            className={`${darkMode ? "text-white" : "text-black"}`} 
+          />
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE DROPDOWN MENU */}
       {menuOpen && (
         <div className="md:hidden px-6 py-4 space-y-4 bg-transparent">
+
           {navItems.map((item) => (
             <motion.button
               key={item.name}
@@ -119,21 +137,11 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
             </motion.button>
           ))}
 
-          {/* MOBILE THEME TOGGLE */}
-          <motion.button
-            onClick={() => setDarkMode(!darkMode)}
-            className="w-10 h-10 flex items-center justify-center rounded-full mt-4"
-            style={{
-              backgroundColor: darkMode ? "#f8ba2b" : "#008080",
-              color: darkMode ? "black" : "white",
-            }}
-          >
-            {darkMode ? "☀️" : "🌙"}
-          </motion.button>
-
+          {/* MOBILE ENROLL BUTTON */}
           <button className="w-full mt-4 py-3 rounded-full font-bold bg-[#f8ba2b] text-black">
             Enroll Now
           </button>
+
         </div>
       )}
     </nav>
