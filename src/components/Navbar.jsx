@@ -8,11 +8,9 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
     { name: "Home", ref: scrollRefs.home },
     { name: "About", ref: scrollRefs.about },
     { name: "Features", ref: scrollRefs.features },
-
-    // ✅ Newly added items
     { name: "Why Us", ref: scrollRefs.whyus },
     { name: "Who Is It For", ref: scrollRefs.who },
-
+    { name: "FAQ", ref: scrollRefs.faq }, // ✅ FAQ Added Properly
     { name: "Pricing", ref: scrollRefs.pricing },
   ];
 
@@ -44,13 +42,12 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
 
         {/* DESKTOP MENU */}
         <div className="hidden md:flex items-center gap-8">
-
           {navItems.map((item) => (
             <motion.button
               key={item.name}
               onClick={() => scrollToSection(item.ref)}
               className="
-                nav-item 
+                nav-item group
                 text-base font-semibold 
                 transition-all 
                 relative 
@@ -61,7 +58,7 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
             >
               {item.name}
 
-              {/* underline */}
+              {/* Animated underline */}
               <span
                 className="
                   absolute left-0 -bottom-1 
@@ -110,7 +107,6 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
       {/* MOBILE MENU */}
       {menuOpen && (
         <div className="md:hidden px-6 py-4 space-y-4 bg-transparent">
-
           {navItems.map((item) => (
             <motion.button
               key={item.name}
