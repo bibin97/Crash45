@@ -73,7 +73,11 @@ Each test includes faculty evaluation + performance insight + improvement pointe
 
   return (
     <div className="max-w-4xl mx-auto py-16 px-4">
-      <h1 className="text-4xl font-bold mb-10 text-center">FAQ</h1>
+      
+      {/* MAIN HEADING */}
+      <h1 className="text-4xl font-bold mb-10 text-center" style={{ color: "#008080" }}>
+        Understand <span style={{ color: "#008080" }}>Crash45 Better</span>
+      </h1>
 
       <div className="space-y-4">
         {faqs.map((faq, i) => (
@@ -83,16 +87,22 @@ Each test includes faculty evaluation + performance insight + improvement pointe
             onClick={() => toggleFAQ(i)}
           >
             <div className="flex justify-between items-center">
-              <h2 className="text-lg font-semibold">{faq.q}</h2>
 
+              {/* QUESTION */}
+              <h2 className="text-lg font-semibold" style={{ color: "#008080" }}>
+                {faq.q}
+              </h2>
+
+              {/* ICON */}
               <motion.div
                 animate={{ rotate: openIndex === i ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <ChevronDown />
+                <ChevronDown style={{ color: "#008080" }} />
               </motion.div>
             </div>
 
+            {/* ANSWER */}
             <AnimatePresence>
               {openIndex === i && (
                 <motion.p
@@ -100,12 +110,14 @@ Each test includes faculty evaluation + performance insight + improvement pointe
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="mt-3 text-gray-700 dark:text-gray-300 whitespace-pre-line"
+                  className="mt-3 dark:text-gray-300 whitespace-pre-line"
+                  style={{ color: "#008080" }}
                 >
                   {faq.a}
                 </motion.p>
               )}
             </AnimatePresence>
+
           </div>
         ))}
       </div>

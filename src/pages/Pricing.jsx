@@ -1,133 +1,110 @@
 import { motion } from "framer-motion";
-
+import Cta from "../components/Cta";
 export default function Pricing() {
   const plans = [
     {
-      name: "Single Subject",
-      price: "₹4,999",
-      duration: "15 hours",
+      title: "Crash 45 (HS)",
+      price: "₹25,999",
       features: [
-        "One subject full coverage",
-        "1-to-1 mentorship",
-        "PYQs & practice tests",
-        "Short notes + study guide",
+        "45 hours",
+        "1:1 mentor",
+        "Concepts + PYQs",
+        "Model Questions",
+        "Tests",
       ],
     },
     {
-      name: "Triple Power",
-      price: "₹12,999",
-      duration: "45 hours",
+      title: "Crash 45 (HSS)",
+      price: "₹31,999",
       features: [
-        "Three subjects accelerated revision",
-        "Full PYQ + mock test suite",
-        "Priority scheduling",
-        "Daily accountability nudges",
+        "45 hours",
+        "1:1 mentor",
+        "Concepts + PYQs",
+        "Model Questions",
+        "Tests",
       ],
-      popular: true,
-    },
-    {
-      name: "Full Board Prep",
-      price: "₹24,999",
-      duration: "90 hours",
-      features: [
-        "All subjects covered",
-        "Dedicated elite mentor",
-        "Unlimited mock tests",
-        "24/7 WhatsApp support",
-      ],
+      highlight: true,
     },
   ];
 
   return (
-    <section id="pricing" className="py-20 px-6">
-      <div className="max-w-7xl mx-auto space-y-14">
+    <section id="pricing" className="py-20 px-4">
+      <div className="max-w-5xl mx-auto space-y-12">
 
-        {/* ================= HEADER ================= */}
-        <h2 className="text-center text-4xl font-[poppins] md:text-6xl text-[#008080] font-bold">
-          Choose Your{" "}
-          <span className="text-[#f8ba2b]">
-            Plan
-          </span>
+        {/* HEADER */}
+        <h2 className="text-center text-4xl md:text-5xl font-extrabold 
+          text-[#008080] dark:text-[#38dada]">
+          Crash 45 <span className="text-[#f8ba2b]">Pricing</span>
         </h2>
 
-        <p className="text-center max-w-2xl mx-auto text-lg opacity-80">
-          Invest in your future. Limited one-to-one slots available.
-        </p>
+        {/* TWO CARDS */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-        {/* ================ PRICING GRID ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
-          {plans.map((plan, i) => (
+          {plans.map((plan, index) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.95, y: 30 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.12 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05, y: -8 }}
-              className={`card p-8 rounded-3xl shadow-xl backdrop-blur-xl relative ${
-                plan.popular ? "border-2 border-[#f8ba2b]" : ""
-              }`}
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              whileHover={{ scale: 1.02 }}
+              className={`
+                relative p-8 rounded-3xl border transition-all duration-300
+                ${plan.highlight ? 
+                  "border-[#f8ba2b] dark:border-[#f8ba2b]" : ""
+                }
+              `}
             >
-              {/* Popular Badge */}
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 
-                  bg-[#008080]  text-black text-xs 
-                  font-bold px-4 py-1 rounded-full shadow-lg">
-                  🔥 MOST POPULAR
+
+              {/* Recommended Tag */}
+              {plan.highlight && (
+                <div className="absolute -top-3 left-4 
+                  bg-[#f8ba2b] text-black text-xs font-semibold 
+                  px-3 py-1 rounded-full shadow-md">
+                  ⭐ Recommended
                 </div>
               )}
 
               {/* TITLE */}
-              <h3 className="text-2xl font-bold mb-1">{plan.name}</h3>
-
-              <p className="text-sm opacity-80 mb-6">{plan.duration}</p>
+              <h3 className="text-2xl font-bold 
+                text-[#008080] dark:text-[#38dada]">
+                {plan.title}
+              </h3>
 
               {/* PRICE */}
-              <div className="text-5xl font-black bg-[#008080]  bg-clip-text text-transparent mb-8">
+              <p className="text-4xl font-extrabold mt-2 
+                text-[#111] dark:text-white">
                 {plan.price}
-              </div>
+              </p>
+
+              {/* Divider */}
+              <div className="w-20 h-1 my-5 rounded-full 
+                bg-[#f8ba2b]"></div>
 
               {/* FEATURES */}
-              <ul className="space-y-4 mb-6">
-                {plan.features.map((feat, j) => (
-                  <li key={j} className="flex items-start gap-3">
-                    <span className="text-xl text-[#f8ba2b]">✓</span>
-                    <span className="opacity-80">{feat}</span>
+              <ul className="space-y-3">
+                {plan.features.map((f, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-[#f8ba2b] text-lg dark:text-[#f8ba2b]">✔</span>
+                    <span className="text-gray-700 dark:text-gray-300 text-lg">{f}</span>
                   </li>
                 ))}
               </ul>
 
-              {/* CTA BUTTON */}
+              {/* BUTTON */}
               <motion.button
                 whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.9 }}
-                className="w-full py-3 rounded-full font-bold text-black shadow-lg shadow-[#f8ba2b]/40"
-                style={{ backgroundColor: "#f8ba2b" }}
+                className="mt-7 w-full py-3 rounded-full font-bold 
+                  bg-[#f8ba2b] text-black shadow-md"
               >
-                Choose Plan
+                Enroll Now
               </motion.button>
+
             </motion.div>
           ))}
         </div>
-
-        {/* FINAL CTA BANNER */}
-        <div className="card rounded-3xl p-10 text-center shadow-xl backdrop-blur-xl">
-          <h3 className="text-3xl font-bold mb-4">⏳ Seats Are Filling Fast!</h3>
-          <p className="mb-6 text-lg opacity-80">
-            One-to-one slots are limited — secure yours before they run out.
-          </p>
-
-          <motion.button
-            whileHover={{ scale: 1.06 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-10 py-4 rounded-full font-bold text-black shadow-lg shadow-[#f8ba2b]/40"
-            style={{ backgroundColor: "#f8ba2b" }}
-          >
-            🔥 Book My Crash-45 Seat Now
-          </motion.button>
-        </div>
-
       </div>
+      <Cta />
     </section>
+    
   );
 }

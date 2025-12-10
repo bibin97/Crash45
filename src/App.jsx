@@ -10,6 +10,7 @@ import Pricing from "./pages/Pricing";
 import Whyus from "./pages/Whyus";
 import Who from "./pages/Who";
 import Faq from "./pages/Faq";
+import Testimonials from "./pages/Testimonials";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -27,6 +28,7 @@ export default function App() {
     whyus: useRef(null),
     who: useRef(null),
     faq: useRef(null),    // <-- IMPORTANT: lowercase 'faq'
+    testimonials: useRef(null),
     pricing: useRef(null),
   };
 
@@ -64,9 +66,14 @@ export default function App() {
           <Faq />
         </section>
 
+        <section ref={scrollRefs.testimonials}>
+          <Testimonials />
+        </section>
+
         <section ref={scrollRefs.pricing}>
           <Pricing />
         </section>
+        
       </main>
     </div>
   );

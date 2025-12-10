@@ -11,6 +11,7 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
     { name: "Why Us", ref: scrollRefs.whyus },
     { name: "Who Is It For", ref: scrollRefs.who },
     { name: "FAQ", ref: scrollRefs.faq }, // ✅ FAQ Added Properly
+    {name: "Testimonials", ref: scrollRefs.testimonials},
     { name: "Pricing", ref: scrollRefs.pricing },
   ];
 
