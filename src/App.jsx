@@ -2,7 +2,7 @@
 import React, { useRef, useState, useEffect } from "react";
 
 import Navbar from "./components/Navbar";
-
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Features from "./pages/Features";
@@ -73,7 +73,7 @@ export default function App() {
         <section ref={scrollRefs.pricing}>
           <Pricing />
         </section>
-        
+       <Footer />
       </main>
     </div>
   );
