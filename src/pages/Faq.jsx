@@ -72,24 +72,29 @@ Each test includes faculty evaluation + performance insight + improvement pointe
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-16 px-4">
-      
+    <div className="max-w-3xl mx-auto py-16 px-4">
+
       {/* MAIN HEADING */}
-      <h1 className="text-4xl font-bold mb-10 text-center" style={{ color: "#008080" }}>
-        Understand <span style={{ color: "#008080" }}>Crash45 Better</span>
-      </h1>
+      {/* MAIN HEADING */}
+      <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-center font-[Poppins]">
+        Common Questions <span className="text-[#008080]">About Crash 45</span>
+      </h2>
+      <p className="text-center text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
+        Clear answers to the most common questions from students and parents.
+      </p>
 
       <div className="space-y-4">
         {faqs.map((faq, i) => (
           <div
             key={i}
-            className="border border-gray-300 dark:border-gray-700 rounded-xl p-5 cursor-pointer bg-white/5 dark:bg-black/20 backdrop-blur"
+            className="about-card group cursor-pointer relative !p-6 !rounded-2xl"
             onClick={() => toggleFAQ(i)}
           >
             <div className="flex justify-between items-center">
 
               {/* QUESTION */}
-              <h2 className="text-lg font-semibold" style={{ color: "#008080" }}>
+              {/* QUESTION */}
+              <h2 className="text-lg font-bold text-[#008080] dark:text-teal-400 group-hover:text-teal-600 dark:group-hover:text-teal-300 transition-colors">
                 {faq.q}
               </h2>
 
@@ -105,22 +110,46 @@ Each test includes faculty evaluation + performance insight + improvement pointe
             {/* ANSWER */}
             <AnimatePresence>
               {openIndex === i && (
-                <motion.p
+                <motion.div
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.4 }}
-                  className="mt-3 dark:text-gray-300 whitespace-pre-line"
-                  style={{ color: "#008080" }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
                 >
-                  {faq.a}
-                </motion.p>
+                  <p className="mt-4 border-t border-gray-100 dark:border-white/10 text-sm md:text-[15px] text-gray-600 dark:text-gray-400 whitespace-pre-line leading-relaxed">
+                    {faq.a}
+                  </p>
+                </motion.div>
               )}
             </AnimatePresence>
 
           </div>
         ))}
       </div>
+
+      {/* CTA Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+        className="mt-16 text-center bg-teal-50 dark:bg-teal-900/20 rounded-3xl p-8 md:p-12 border border-teal-100 dark:border-teal-800/30"
+      >
+        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+          Still have questions?
+        </h3>
+        <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto">
+          We understand that choosing the right program is important. Talk to our academic counselor to get clear answers.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button className="px-8 py-3.5 bg-[#008080] text-white rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all text-lg">
+            Enroll Now
+          </button>
+          <button className="px-8 py-3.5 bg-white dark:bg-transparent border-2 border-[#008080] text-[#008080] rounded-full font-bold hover:bg-[#008080]/5 transition-all text-lg">
+            Talk to a Mentor
+          </button>
+        </div>
+      </motion.div>
     </div>
   );
 }

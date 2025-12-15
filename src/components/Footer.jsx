@@ -1,62 +1,83 @@
 import React from "react";
+import { Phone, MessageCircle, Mail } from "lucide-react";
 
 export default function Footer({ darkMode }) {
+  const scrollToSection = (id) => {
+    // Basic implementation if no refs provided, or just use anchors
+    const element = document.getElementById(id);
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <footer
-      className={`border-t py-10 px-6 transition-colors duration-500 ${
-        darkMode
-          ? "bg-slate-900 border-white/10 text-gray-300"
-          : "bg-gray-300 border-gray-500 text-gray-800"
-      }`}
+      className={`mt-20 border-t py-16 px-6 transition-colors duration-500 ${darkMode
+          ? "bg-zinc-950 border-white/10 text-gray-300"
+          : "bg-gray-100 border-gray-200 text-gray-800"
+        }`}
     >
-      <div className="max-w-7xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
 
-        {/* Logo */}
-        <div className="text-3xl font-black mb-4 flex items-center justify-center gap-1">
-          <span style={{ color: "#008080" }}>CRASH</span>
-          <span style={{ color: "#f8ba2b" }}>45</span>
+        {/* Column 1: Brand */}
+        <div>
+          <div className="text-3xl font-black mb-4 flex items-center gap-1">
+            <span style={{ color: "#008080" }}>CRASH</span>
+            <span style={{ color: "#f8ba2b" }}>45</span>
+          </div>
+          <p className={`text-sm leading-relaxed ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
+            A personalised one-to-one online exam revision program by Mash Magic
+          </p>
         </div>
 
-        {/* About line */}
-        <p
-          className={`mb-4 text-sm ${
-            darkMode ? "text-gray-400" : "text-gray-700"
-          }`}
-        >
-          A personalised one-to-one online exam revision program by Mash Magic
-        </p>
-
-        {/* Social icons (Optional) */}
-        <div className="flex justify-center gap-6 text-xl mb-6">
-          <a
-            href="https://wa.me/919876543210"
-            className="magnetic hover:text-[#f8ba2b] transition"
-            target="_blank"
-          >
-            🟢
-          </a>
-          <a
-            href="#"
-            className="magnetic hover:text-[#f8ba2b] transition"
-          >
-            📘
-          </a>
-          <a
-            href="#"
-            className="magnetic hover:text-[#f8ba2b] transition"
-          >
-            📸
-          </a>
+        {/* Column 2: Quick Links */}
+        <div>
+          <h3 className={`font-bold text-lg mb-4 ${darkMode ? "text-white" : "text-gray-900"}`}>Quick Links</h3>
+          <ul className="space-y-3 text-sm">
+            {["Home", "About", "Pricing", "Faq"].map((item) => (
+              <li key={item}>
+                <a
+                  href={`#${item.toLowerCase()}`}
+                  className="hover:text-[#f8ba2b] transition-colors cursor-pointer block"
+                >
+                  {item === "Faq" ? "FAQ" : item}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* Copyright */}
-        <p
-          className={`text-xs ${
-            darkMode ? "text-gray-500" : "text-gray-600"
-          }`}
-        >
-          © {new Date().getFullYear()} CRASH 45. All rights reserved.
-        </p>
+        {/* Column 3: Contact / Trust */}
+        <div>
+          <h3 className={`font-bold text-lg mb-4 ${darkMode ? "text-white" : "text-gray-900"}`}>Contact Mentors</h3>
+          <ul className="space-y-4 text-sm">
+            <li>
+              <a href="https://wa.me/919999999999" target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-[#25D366] transition">
+                <MessageCircle size={18} />
+                <span>WhatsApp Support</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+919999999999" className="flex items-center gap-3 hover:text-[#f8ba2b] transition">
+                <Phone size={18} />
+                <span>+91 907 444 8660</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contact@crash45.com" className="flex items-center gap-3 hover:text-[#f8ba2b] transition">
+                <Mail size={18} />
+                <span>contact@crash45.com</span>
+              </a>
+            </li>
+            <li className={`pt-2 text-xs font-semibold ${darkMode ? "text-teal-400" : "text-teal-700"}`}>
+              ✨ Online 1:1 Mentorship
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Legal / Micro Text */}
+      <div className={`mt-16 pt-8 border-t text-center text-xs ${darkMode ? "border-zinc-800 text-gray-500" : "border-gray-200 text-gray-500"}`}>
+        <p>Crash 45 is a program by Mash Magic Edu Tech.</p>
+        <p className="mt-2 text-[10px] opacity-70">© {new Date().getFullYear()} All rights reserved.</p>
       </div>
     </footer>
   );

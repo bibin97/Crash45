@@ -1,29 +1,33 @@
 import { motion } from "framer-motion";
 import Cta from "../components/Cta";
-export default function Pricing() {
+export default function Pricing({ darkMode }) {
   const plans = [
     {
-      title: "Crash 45 (HS)",
-      price: "₹25,999",
-      features: [
-        "45 hours",
-        "1:1 mentor",
-        "Concepts + PYQs",
-        "Model Questions",
-        "Tests",
-      ],
-    },
-    {
       title: "Crash 45 (HSS)",
+      sub: "For Plus One & Plus Two",
       price: "₹31,999",
       features: [
-        "45 hours",
-        "1:1 mentor",
-        "Concepts + PYQs",
-        "Model Questions",
-        "Tests",
+        "45 hours intensive coaching",
+        "Dedicated 1:1 personal mentor",
+        "Deep Concepts + Previous Year Qs",
+        "Chapter tests + full-length tests",
+        "24/7 Doubt Clearance",
       ],
       highlight: true,
+      cta: "Book Your Slot",
+    },
+    {
+      title: "Crash 45 (HS)",
+      sub: "For Classes 8–10",
+      price: "₹25,999",
+      features: [
+        "45 hours intensive coaching",
+        "Dedicated 1:1 personal mentor",
+        "Deep Concepts + Previous Year Qs",
+        "Chapter tests + full-length tests",
+        "24/7 Doubt Clearance",
+      ],
+      cta: "Start Learning",
     },
   ];
 
@@ -32,13 +36,17 @@ export default function Pricing() {
       <div className="max-w-5xl mx-auto space-y-12">
 
         {/* HEADER */}
-        <h2 className="text-center text-4xl md:text-5xl font-extrabold 
-          text-[#008080] dark:text-[#38dada]">
-          Crash 45 <span className="text-[#f8ba2b]">Pricing</span>
-        </h2>
+        <div className="text-center mb-10">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 font-[Poppins] text-black dark:text-white">
+            Crash 45 <span className="text-[#008080] dark:text-[#008080]">Pricing</span>
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Simple, transparent pricing with complete academic support.
+          </p>
+        </div>
 
         {/* TWO CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
 
           {plans.map((plan, index) => (
             <motion.div
@@ -48,63 +56,90 @@ export default function Pricing() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
               className={`
-                relative p-8 rounded-3xl border transition-all duration-300
-                ${plan.highlight ? 
-                  "border-[#f8ba2b] dark:border-[#f8ba2b]" : ""
+                relative p-8 md:p-10 rounded-3xl border transition-all duration-300
+                ${plan.highlight ?
+                  "border-[#f8ba2b] shadow-xl scale-105 z-10" :
+                  "border-gray-200 dark:border-zinc-800"
                 }
               `}
+              style={{
+                backgroundColor: darkMode ? "#18181b" : "#ffffff",
+                color: darkMode ? "#ffffff" : "#111827"
+              }}
             >
 
               {/* Recommended Tag */}
               {plan.highlight && (
-                <div className="absolute -top-3 left-4 
-                  bg-[#f8ba2b] text-black text-xs font-semibold 
-                  px-3 py-1 rounded-full shadow-md">
-                  ⭐ Recommended
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2
+                  bg-gradient-to-r from-[#f8ba2b] to-orange-400 text-black text-sm font-bold
+                  px-6 py-2 rounded-full shadow-lg ring-4 ring-[#fff5d6] dark:ring-zinc-800
+                  whitespace-nowrap">
+                  ⭐ Most Chosen by Students
                 </div>
               )}
 
               {/* TITLE */}
-              <h3 className="text-2xl font-bold 
-                text-[#008080] dark:text-[#38dada]">
-                {plan.title}
-              </h3>
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-[#008080] dark:text-teal-400">
+                  {plan.title}
+                </h3>
+                <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wide">
+                  {plan.sub}
+                </p>
+              </div>
 
               {/* PRICE */}
-              <p className="text-4xl font-extrabold mt-2 
-                text-[#111] dark:text-white">
-                {plan.price}
-              </p>
+              <div className="text-center mt-6">
+                <p className="text-5xl font-extrabold text-gray-900 dark:text-white">
+                  {plan.price}
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                  Complete program fee · No hidden charges
+                </p>
+              </div>
 
               {/* Divider */}
-              <div className="w-20 h-1 my-5 rounded-full 
-                bg-[#f8ba2b]"></div>
+              <div className="w-full h-px bg-gray-100 dark:bg-zinc-700 my-8"></div>
 
               {/* FEATURES */}
-              <ul className="space-y-3">
+              <ul className="space-y-4 mb-8">
                 {plan.features.map((f, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="text-[#f8ba2b] text-lg dark:text-[#f8ba2b]">✔</span>
-                    <span className="text-gray-700 dark:text-gray-300 text-lg">{f}</span>
+                  <li key={i} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 flex items-center justify-center text-xs font-bold">
+                      ✓
+                    </div>
+                    <span className="text-gray-700 dark:text-gray-200 text-lg font-medium">{f}</span>
                   </li>
                 ))}
               </ul>
 
               {/* BUTTON */}
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                className="mt-7 w-full py-3 rounded-full font-bold 
-                  bg-[#f8ba2b] text-black shadow-md"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                className={`w-full py-4 rounded-xl font-bold text-lg shadow-lg transition-all
+                  bg-[#f8ba2b] text-black hover:bg-[#e6ac22] hover:scale-105 active:scale-95
+                `}
               >
-                Enroll Now
+                {plan.cta}
               </motion.button>
+
+              {/* Risk Reduction */}
+              <p className="text-center text-xs text-gray-500 dark:text-gray-400 mt-4">
+                🔒 100% syllabus completion guaranteed
+              </p>
 
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom Comparison Line */}
+        <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-8">
+          ✨ Both plans include study materials, tests, and full 1:1 mentor support.
+        </p>
       </div>
-      <Cta />
-    </section>
-    
+      <Cta darkMode={darkMode} />
+    </section >
+
   );
 }

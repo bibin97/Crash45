@@ -67,13 +67,13 @@ export default function App() {
         </section>
 
         <section ref={scrollRefs.testimonials}>
-          <Testimonials />
+          <Testimonials darkMode={darkMode} />
         </section>
 
         <section ref={scrollRefs.pricing}>
-          <Pricing />
+          <Pricing darkMode={darkMode} />
         </section>
-       <Footer />
+        <Footer darkMode={darkMode} />
       </main>
     </div>
   );
