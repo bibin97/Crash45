@@ -18,8 +18,10 @@ body {
    LIGHT MODE (DEFAULT)
 =========================================================== */
 body {
-  background: #f7f7f8 !important;   /* Premium silver */
-  color: #071525 !important;        /* Premium dark text */
+  background: #f7f7f8 !important;
+  /* Premium silver */
+  color: #071525 !important;
+  /* Premium dark text */
 }
 
 /* Headings */
@@ -29,12 +31,13 @@ body h3,
 body h4,
 body h5,
 body h6 {
-  color: #008080 !important;  /* Premium teal */
+  color: #008080 !important;
+  /* Premium teal */
 }
 
 /* Paragraphs / lists */
 body p,
-body ,
+body,
 body li {
   color: #1a1f2b !important;
 }
@@ -42,14 +45,14 @@ body li {
 /* Cards */
 body .card {
   background: #ffffff !important;
-  border: 1px solid rgba(0,0,0,0.1) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
   color: #071525 !important;
 }
 
 /* Chips */
 body .chip {
-  background: rgba(0,0,0,0.05);
-  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   color: #071525;
 }
 
@@ -59,7 +62,7 @@ body .chip {
 button:not(.nav-item),
 .btn-yellow,
 [data-magnetic] {
-  
+
   color: #000 !important;
   border-radius: 9999px;
   font-weight: 600;
@@ -67,7 +70,7 @@ button:not(.nav-item),
 }
 
 button:not(.nav-item):hover {
-  
+
   transform: scale(1.03);
 }
 
@@ -91,22 +94,24 @@ button:not(.nav-item):hover {
 
 /* Dark text */
 .dark p,
-.dark ,
+.dark,
 .dark li {
   color: #dce1e8 !important;
 }
 
 /* Dark cards */
+/* Dark cards */
 .dark .card {
-  background: rgba(255,255,255,0.08) !important;
-  border: 1px solid rgba(255,255,255,0.15) !important;
+  background: #18181b !important;
+  /* Proper Dark */
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
   color: #ffffff !important;
 }
 
 /* Dark chip */
 .dark .chip {
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
 }
 
@@ -168,7 +173,7 @@ section {
   pointer-events: none;
   z-index: 9999;
   mix-blend-mode: difference;
-  border: 2px solid rgba(255,213,79,0.9);
+  border: 2px solid rgba(255, 213, 79, 0.9);
   background: transparent;
 }
 
@@ -177,18 +182,22 @@ section {
     display: none;
   }
 }
+
 /* NAVBAR TEXT FIX */
 /* NAVBAR TEXT FIX */
 .nav-item {
-  color: #071525 !important; /* light mode */
+  color: #071525 !important;
+  /* light mode */
 }
 
 .dark .nav-item {
-  color: #ffffff !important; /* dark mode */
+  color: #ffffff !important;
+  /* dark mode */
 }
 
 .nav-item:hover {
-  color: #008080 !important; /* teal hover */
+  color: #008080 !important;
+  /* teal hover */
 }
 
 /* Block yellow dot cursor inside navbar */
@@ -196,13 +205,15 @@ nav button,
 nav a {
   pointer-events: auto;
 }
- :root span {
+
+:root span {
   color: #000;
 }
 
- .dark span {
+.dark span {
   color: #fff;
-} 
+}
+
 /* .dark .card, 
 .dark .card * {
   color: #ffffff !important;
@@ -217,8 +228,8 @@ nav a {
   font-weight: 800;
   border-radius: 0.75rem;
   color: #004d48;
-  background: linear-gradient(90deg, rgba(248,186,43,0.18), rgba(0,167,157,0.12));
-  border: 1px solid rgba(248,186,43,0.35);
+  background: linear-gradient(90deg, rgba(248, 186, 43, 0.18), rgba(0, 167, 157, 0.12));
+  border: 1px solid rgba(248, 186, 43, 0.35);
   backdrop-filter: blur(6px);
   z-index: 1;
 }
@@ -229,12 +240,10 @@ nav a {
   position: absolute;
   inset: -8px;
   border-radius: inherit;
-  background: radial-gradient(
-    circle,
-    rgba(248,186,43,0.35),
-    rgba(0,167,157,0.25),
-    transparent
-  );
+  background: radial-gradient(circle,
+      rgba(248, 186, 43, 0.35),
+      rgba(0, 167, 157, 0.25),
+      transparent);
   filter: blur(18px);
   opacity: 0.8;
   animation: masteryBreath 2.8s ease-in-out infinite;
@@ -243,9 +252,20 @@ nav a {
 
 /* Breathing glow animation */
 @keyframes masteryBreath {
-  0% { transform: scale(1); opacity: 0.6; }
-  50% { transform: scale(1.06); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.6; }
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
 }
 
 /* Hover boost */
@@ -261,11 +281,13 @@ nav a {
     padding: 0.28rem 0.75rem;
     font-size: 0.9rem;
   }
+
   .fullmastery-pill::after {
     inset: -6px;
     filter: blur(14px);
   }
 }
+
 /* ===========================================================
    UNIVERSAL ABOUT CARD STYLING (LIGHT + DARK MODE)
 =========================================================== */
@@ -273,8 +295,8 @@ nav a {
 .about-card {
   border-radius: 20px !important;
   padding: 28px !important;
-  border: 1px solid rgba(0,0,0,0.1) !important;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
   transition: 0.3s ease-in-out !important;
 }
 
@@ -286,33 +308,38 @@ body .about-card {
 
 /* Dark Mode */
 .dark .about-card {
-  background: rgba(255, 255, 255, 0.07) !important;
+  background: #18181b !important;
+  /* Proper Dark */
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  color: #e8ecf3 !important;
+  color: #ffffff !important;
 }
 
 /* Title inside card */
 .about-card h3 {
-  color: #008080 !important;  /* teal */
+  color: #008080 !important;
+  /* teal */
   font-weight: 700 !important;
 }
 
 .dark .about-card h3 {
-  color: #4fd1c5 !important;  /* lighter teal for dark mode */
+  color: #4fd1c5 !important;
+  /* lighter teal for dark mode */
 }
 
 /* Bullet text */
 .about-card li,
 .about-card p,
 .about-card span {
-  color: inherit !important; /* automatically adjusts for dark/light */
+  color: inherit !important;
+  /* automatically adjusts for dark/light */
 }
 
 /* Hover effect */
 .about-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.15) !important;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.15) !important;
 }
+
 /* ===========================================================
    SAFE UNIVERSAL SPAN COLOR FIX (DO NOT OVERRIDE HEADING COLORS)
 =========================================================== */

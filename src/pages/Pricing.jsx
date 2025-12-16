@@ -64,7 +64,7 @@ export default function Pricing({ darkMode }) {
               `}
               style={{
                 backgroundColor: darkMode ? "#18181b" : "#ffffff",
-                color: darkMode ? "#ffffff" : "#111827"
+                color: darkMode ? "#ffffff" : "#000000"
               }}
             >
 

@@ -53,8 +53,8 @@ export default function Who() {
               transition={{ delay: i * 0.1 }}
               className="flex items-center gap-4 text-lg"
             >
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-teal-100 dark:bg-teal-900/40 flex items-center justify-center">
-                <item.icon className="text-teal-600 dark:text-teal-400" size={20} />
+              <div className="flex-shrink-0 w-10 h-10 rounded-full  flex items-center justify-center">
+                <item.icon className="text-gray-600 dark:text-teal-400" size={28} />
               </div>
               <span className="text-gray-800 dark:text-gray-100 font-medium">{item.text}</span>
             </motion.li>
@@ -63,7 +63,7 @@ export default function Who() {
 
         {/* CTA Button Inside Card */}
         <div className="flex flex-col items-center">
-          <button className="px-8 py-3.5 bg-gradient-to-r from-teal-600 to-emerald-600 text-white rounded-full font-bold text-lg shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all mb-4">
+          <button className="px-8 py-3.5 bg-gradient-to-r from-yellow-600 to-yellow-300 text-white rounded-full font-bold text-lg shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all mb-4">
             Talk to a Mentor
           </button>
           <p className="text-sm text-gray-500 dark:text-gray-400 italic opacity-80">

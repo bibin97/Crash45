@@ -133,7 +133,7 @@ Each test includes faculty evaluation + performance insight + improvement pointe
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="mt-16 text-center bg-teal-50 dark:bg-teal-900/20 rounded-3xl p-8 md:p-12 border border-teal-100 dark:border-teal-800/30"
+        className="mt-16 text-center  rounded-3xl p-8 md:p-12 border border-teal-100 dark:border-teal-800/30 "
       >
         <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
           Still have questions?

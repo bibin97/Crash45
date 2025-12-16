@@ -57,7 +57,7 @@ export default function Features() {
   return (
     <section id="features" className="py-24 px-6">
       <div className="max-w-7xl mx-auto text-center">
-        
+
         {/* SECTION TITLE */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="about-card rounded-2xl p-6 shadow-md 
-                         bg-white dark:bg-[rgba(255,255,255,0.06)]
+                         bg-white dark:bg-[#18181b]
                          border border-gray-200 dark:border-white/10
                          hover:shadow-xl transition-all cursor-pointer"
             >

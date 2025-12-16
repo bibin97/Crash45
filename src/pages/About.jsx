@@ -143,7 +143,7 @@ export default function About() {
               </div>
 
               {/* Card */}
-              <div className="bg-white dark:bg-white/10 rounded-2xl shadow-lg p-6 w-full border border-gray-200 dark:border-white/10 hover:shadow-2xl transition-all duration-300">
+              <div className=" rounded-2xl shadow-lg p-6 w-full border border-gray-200 dark:border-white/10 hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-2xl">{step.icon}</span>
                   {step.hours && (
