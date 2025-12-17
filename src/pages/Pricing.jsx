@@ -59,16 +59,13 @@ export default function Pricing() {
                 relative p-8 md:p-10 rounded-3xl border transition-all duration-300
                 ${plan.highlight ?
                   "border-[#f8ba2b] shadow-xl scale-105 z-10" :
-                  "border-gray-200 dark:border-zinc-800"
+                  "border-[#008080] dark:border-[#008080]"
                 }
                 bg-transparent
                 card
                 
               `}
-            // style={{
-            //   backgroundColor: darkMode ? "#18181b" : "#ffffff",
-            //   color: darkMode ? "#ffffff" : "#000000"
-            // }}
+           
             >
 
               {/* Recommended Tag */}

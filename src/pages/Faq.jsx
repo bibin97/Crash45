@@ -79,7 +79,7 @@ Each test includes faculty evaluation + performance insight + improvement pointe
       <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-center font-[Poppins]">
         Common Questions <span className="text-black dark:text-white">About Crash 45</span>
       </h2>
-      <p className="text-center text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
+      <p className="text-center text-lg text-gray-900 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
         Clear answers to the most common questions from students and parents.
       </p>
 
@@ -87,14 +87,14 @@ Each test includes faculty evaluation + performance insight + improvement pointe
         {faqs.map((faq, i) => (
           <div
             key={i}
-            className="about-card group cursor-pointer relative !p-6 !rounded-2xl"
+            className="about-card group cursor-pointer relative !p-6 !rounded-2xl transition-colors dark:hover:bg-zinc-800/50"
             onClick={() => toggleFAQ(i)}
           >
             <div className="flex justify-between items-center">
 
               {/* QUESTION */}
               {/* QUESTION */}
-              <h2 className="text-lg font-bold text-[#008080] dark:text-teal-400 group-hover:text-teal-600 dark:group-hover:text-teal-300 transition-colors border-white dark:border-gray-950">
+              <h2 className="text-lg font-bold text-black dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-300 transition-colors border-white dark:border-gray-950">
                 {faq.q}
               </h2>
 
@@ -117,7 +117,7 @@ Each test includes faculty evaluation + performance insight + improvement pointe
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <p className="mt-4 border-t border-gray-100 text-sm md:text-[15px] text-gray-900 whitespace-pre-line leading-relaxed">
+                  <p className="mt-4 border-t border-gray-100 text-sm md:text-[15px] text-gray-900 dark:text-white whitespace-pre-line leading-relaxed">
                     {faq.a}
                   </p>
                 </motion.div>
@@ -135,10 +135,10 @@ Each test includes faculty evaluation + performance insight + improvement pointe
         transition={{ delay: 0.2 }}
         className="mt-16 text-center  rounded-3xl p-8 md:p-12 border border-white bg-white dark:bg-black"
       >
-        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
           Still have questions?
         </h3>
-        <p className="text-gray-600 dark:text-white mb-8 max-w-xl mx-auto">
+        <p className="text-gray-900 dark:text-white mb-8 max-w-xl mx-auto">
           We understand that choosing the right program is important. Talk to our academic counselor to get clear answers.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -36,7 +36,9 @@ h5,
 h6 {
   font-family: "Poppins", sans-serif !important;
 }
-
+h1,h2,h3{
+  color: #008080;
+}
 /* Paragraphs / lists */
 body {
   font-family: "Inter", sans-serif !important;

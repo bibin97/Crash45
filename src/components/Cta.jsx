@@ -13,11 +13,11 @@ export default function Cta() {
         }}
       >
         {/* Left Section */}
-        <div className="text-gray-900 dark:text-white">
-          <h2 className="text-3xl font-extrabold">
+        <div className="text-gray-900">
+          <h2 className="text-3xl font-extrabold dark:text-white">
             Ready to boost your exam scores?
           </h2>
-          <p className="mt-2 text-sm md:text-base text-gray-900 dark:text-white">
+          <p className="mt-2 text-sm md:text-base text-gray-600 dark:text-gray-300">
             Complete syllabus coverage with personal mentor guidance.
           </p>
         </div>

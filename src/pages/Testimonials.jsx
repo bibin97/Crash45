@@ -20,7 +20,7 @@ export default function Testimonials() {
         "Very impressed with the discipline and progress. Diya gained real confidence thanks to Crash 45 teachers."
     },
     {
-      name: "Rahul P.",
+      name: "Lena p.",
       img: "https://i.pravatar.cc/150?img=45",
       text: "Crash 45 helped me focus on important chapters and PYQs. The weekly model tests boosted my accuracy a lot.",
       score: "Improved from 36 → 78%",
@@ -136,7 +136,7 @@ export default function Testimonials() {
           transition={{ delay: 0.6 }}
           className="mt-10 text-center"
         >
-          <button className="px-10 py-4 bg-gradient-to-r from-[#008080] to-emerald-600 !text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all ring-4 ring-teal-50">
+          <button className="px-10 py-4 bg-yellow-400 !text-black dark:text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all ">
             Book a Free Consultation
           </button>
         </motion.div>

@@ -53,8 +53,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="text-center font-[Poppins] text-4xl md:text-5xl font-extrabold mb-8"
         >
-          How Crash45{" "}
-          <span className="text-black dark:text-white">Works</span>
+          How Crash45 <span className="text-black dark:text-white">Works</span>
         </motion.h2>
 
         {/* Gradient DEFINITIONS */}
