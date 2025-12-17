@@ -10,7 +10,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="mt-20 border-t py-16 px-6 transition-colors duration-500 bg-gray-100 border-gray-200 text-gray-800"
+      className="mt-20 border-t py-16 px-6 transition-colors duration-500 bg-gray-100 dark:bg-zinc-950 border-gray-200 dark:border-white/10 text-gray-800 dark:text-gray-300"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
 
@@ -18,7 +18,7 @@ export default function Footer() {
         <div>
           <div className="text-3xl font-black mb-4 flex items-center gap-1">
             <span style={{ color: "#008080" }}>CRASH</span>
-            <span style={{ color: "#000000" }}>45</span>
+            <span className="text-black dark:text-white">45</span>
           </div>
           <p className="text-sm leading-relaxed text-gray-600">
             A personalised one-to-one online exam revision program by Mash Magic

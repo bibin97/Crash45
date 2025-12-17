@@ -8,13 +8,12 @@ export default function Cta() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between gap-6 transition-all duration-300 relative overflow-hidden shadow-xl border border-gray-200"
+        className="rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between gap-6 transition-all duration-300 relative overflow-hidden shadow-xl border border-gray-200 dark:border-white/10 dark:bg-[#18181b]"
         style={{
-          background: "#ffffff",
         }}
       >
         {/* Left Section */}
-        <div className="text-gray-900">
+        <div className="text-gray-900 dark:text-white">
           <h2 className="text-3xl font-extrabold">
             Ready to boost your exam scores?
           </h2>

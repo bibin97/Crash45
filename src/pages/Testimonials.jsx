@@ -36,9 +36,9 @@ export default function Testimonials() {
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-black font-[Poppins]">
           Real Results from{" "}
-          <span className="text-black">Crash 45 Students & Parents</span>
+          <span className="text-black dark:text-white">Crash 45 Students & Parents</span>
         </h2>
-        <p className="text-center text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
+        <p className="text-center text-lg text-gray-600 dark:text-gray-300 mb-16 max-w-2xl mx-auto">
           See how students improved marks, confidence, and discipline in just 45 hours.
         </p>
 
@@ -57,13 +57,11 @@ export default function Testimonials() {
                   about-card relative rounded-3xl transition-all duration-300 hover:-translate-y-3 overflow-hidden
                   min-w-[85vw] md:min-w-0 snap-center
                   ${isMiddle
-                    ? "shadow-2xl border !border-teal-500/50 md:scale-105 z-10 p-6 md:p-8"
-                    : "border-gray-200 p-6"}
+                    ? "shadow-2xl border !border-teal-500/50 md:scale-105 z-10 p-6 md:p-8 bg-[#f0fdfa] dark:bg-[#18181b]"
+                    : "border-gray-200 dark:border-zinc-800 p-6 bg-white dark:bg-[#09090b]"}
                 `}
                 style={{
-                  backgroundColor: isMiddle
-                    ? "#f0fdfa"
-                    : undefined
+
                 }}
               >
 
@@ -78,7 +76,7 @@ export default function Testimonials() {
                   />
 
                   {/* Name */}
-                  <h3 className="text-xl font-bold mb-2 text-black">
+                  <h3 className="text-xl font-bold mb-2 text-black dark:text-white">
                     {item.name}
                   </h3>
 
@@ -90,12 +88,12 @@ export default function Testimonials() {
                   </div>
 
                   {/* Score */}
-                  <p className="text-lg font-extrabold text-[#008080] mb-4 bg-teal-50 py-2 rounded-lg">
+                  <p className="text-lg font-extrabold text-[#008080] dark:text-teal-400 mb-4 bg-teal-50 dark:bg-teal-900/30 py-2 rounded-lg">
                     {item.score}
                   </p>
 
                   {/* Text */}
-                  <p className="text-sm mb-4 text-gray-700 leading-relaxed font-medium">
+                  <p className="text-sm mb-4 text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
                     "{item.text}"
                   </p>
 

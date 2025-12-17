@@ -66,7 +66,7 @@ export default function Features() {
           className="text-4xl md:text-5xl font-extrabold font-[Poppins] mb-14"
         >
           What You Get Inside {" "}
-          <span className="text-black">Crash 45</span>
+          <span className="text-black dark:text-white">Crash 45</span>
         </motion.h2>
 
         {/* FEATURES GRID */}
@@ -78,16 +78,16 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="about-card rounded-2xl p-6 shadow-md 
-                         border border-gray-200
-                         hover:shadow-xl transition-all cursor-pointer"
+                         border border-gray-200 dark:border-white/10
+                         hover:shadow-xl transition-all cursor-pointer bg-white dark:bg-[#18181b]"
             >
               <div className="mb-4">{item.icon}</div>
 
-              <h3 className="font-semibold text-lg text-[#008080] mb-2">
+              <h3 className="font-semibold text-lg text-[#008080] dark:text-teal-400 mb-2">
                 {item.title}
               </h3>
 
-              <p className="text-sm text-black">
+              <p className="text-sm text-black dark:text-gray-300">
                 {item.desc}
               </p>
             </motion.div>

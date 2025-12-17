@@ -54,7 +54,7 @@ export default function About() {
           className="text-center font-[Poppins] text-4xl md:text-5xl font-extrabold mb-8"
         >
           How Crash45{" "}
-          <span className="text-black">Works</span>
+          <span className="text-black dark:text-white">Works</span>
         </motion.h2>
 
         {/* Gradient DEFINITIONS */}
@@ -143,7 +143,7 @@ export default function About() {
               </div>
 
               {/* Card */}
-              <div className=" rounded-2xl shadow-lg p-6 w-full border  border-gray-200 hover:shadow-2xl transition-all duration-300 bg-white">
+              <div className=" rounded-2xl shadow-lg p-6 w-full border  border-gray-200 dark:border-white/10 hover:shadow-2xl transition-all duration-300 bg-white dark:bg-[#18181b]">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-2xl">{step.icon}</span>
                   {step.hours && (
@@ -155,7 +155,7 @@ export default function About() {
                   {step.title}
                 </h3>
 
-                <ul className="text-black space-y-2 text-sm">
+                <ul className="text-black dark:text-white space-y-2 text-sm">
                   {step.bullets.map((bullet, i) => (
                     <li key={i} className="flex gap-2">
                       <span className="font-bold">•</span>

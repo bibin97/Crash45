@@ -27,7 +27,7 @@ export default function App() {
   };
 
   return (
-    <div>
+    <div className="font-['Inter'] min-h-screen bg-[#f7f7f8] text-[#071525] dark:bg-[#05070d] dark:text-[#f3f4f6] transition-colors duration-300">
       <Navbar
         scrollRefs={scrollRefs}
       />

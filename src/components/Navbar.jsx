@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu } from "lucide-react"; // ✅ proper icon
+import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar({ scrollRefs }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,7 +28,8 @@ export default function Navbar({ scrollRefs }) {
         fixed top-0 left-0 right-0 z-50 
         backdrop-blur-xl 
         border-b
-        bg-transparent border-transparent
+        bg-white/70 dark:bg-black/70 
+        border-white/20 dark:border-white/10
         transition-all duration-300
       "
     >
@@ -39,11 +41,11 @@ export default function Navbar({ scrollRefs }) {
           whileHover={{ scale: 1.05 }}
           onClick={() => scrollToSection(scrollRefs.home)}
         >
-          <h1 className="text-teal-500">CRASH <span className="text-black">45</span></h1>
+          <h1 className="text-teal-500">CRASH <span className="text-black dark:text-white">45</span></h1>
         </motion.div>
 
         {/* DESKTOP MENU */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
             <motion.button
               key={item.name}
@@ -51,9 +53,11 @@ export default function Navbar({ scrollRefs }) {
               className="
                 nav-item group
                 text-base font-semibold 
+                text-gray-800 dark:text-gray-200
                 transition-all 
                 relative 
                 cursor-pointer
+                hover:text-teal-600 dark:hover:text-teal-400
               "
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
@@ -72,6 +76,8 @@ export default function Navbar({ scrollRefs }) {
             </motion.button>
           ))}
 
+          <ThemeToggle />
+
           {/* ENROLL BUTTON */}
           <motion.button
             className="px-6 py-2 rounded-full font-bold bg-[#f8ba2b] text-black"
@@ -82,27 +88,27 @@ export default function Navbar({ scrollRefs }) {
           </motion.button>
         </div>
 
-        {/* MOBILE MENU BUTTON */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden"
-        >
-          <Menu
-            size={28}
-            className="text-black"
-          />
-        </button>
+        {/* MOBILE ACTIONS */}
+        <div className="md:hidden flex items-center gap-4">
+          <ThemeToggle />
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-gray-800 dark:text-gray-200"
+          >
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* MOBILE DROPDOWN MENU */}
       {menuOpen && (
-        <div className="md:hidden px-6 py-4 space-y-4 bg-transparent">
+        <div className="md:hidden px-6 py-4 space-y-4 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-xl border-b border-gray-100 dark:border-zinc-800">
 
           {navItems.map((item) => (
             <motion.button
               key={item.name}
               onClick={() => scrollToSection(item.ref)}
-              className="block w-full text-left nav-item text-lg font-semibold"
+              className="block w-full text-left nav-item text-lg font-semibold text-gray-800 dark:text-gray-200"
               whileHover={{ scale: 1.03 }}
             >
               {item.name}

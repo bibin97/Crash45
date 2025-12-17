@@ -24,7 +24,7 @@ export default function WhyUs() {
         className="text-center text-4xl md:text-5xl font-extrabold font-[Poppins] mb-4"
       >
         Why Students & Parents {" "}
-        <span className="text-black">
+        <span className="text-black dark:text-white">
           Trust Crash 45
         </span>
       </motion.h2>
@@ -33,7 +33,7 @@ export default function WhyUs() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-center text-lg  mb-10 max-w-2xl mx-auto"
+        className="text-center text-lg dark:text-gray-300 mb-10 max-w-2xl mx-auto"
       >
         A focused 45-hour crash program designed for maximum marks, clarity, and confidence.
       </motion.p>
@@ -46,7 +46,7 @@ export default function WhyUs() {
           transition={{ duration: 0.6 }}
           className="space-y-8"
         >
-          <div className="card backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="card backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-gray-100 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300 bg-white dark:bg-[#18181b]">
             <ul className="space-y-6">
               {points.map((p, i) => (
                 <motion.li
@@ -59,7 +59,7 @@ export default function WhyUs() {
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center shadow-md">
                     <CheckCircle className="text-white" size={20} />
                   </div>
-                  <span className="text-black font-medium">{p}</span>
+                  <span className="text-black dark:text-white font-medium">{p}</span>
                 </motion.li>
               ))}
             </ul>
@@ -94,9 +94,9 @@ export default function WhyUs() {
           className="relative"
         >
           <div className="grid gap-6">
-            <div className=" rounded-3xl p-8 shadow-xl border border-gray-100 transform hover:scale-[1.02] transition-transform flex flex-col justify-center text-center card">
-              <h3 className="text-6xl font-extrabold text-teal-600 mb-2">45</h3>
-              <p className="text-black text-lg font-medium">Hours of Intensive Learning</p>
+            <div className=" rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-white/10 transform hover:scale-[1.02] transition-transform flex flex-col justify-center text-center card bg-white dark:bg-[#18181b]">
+              <h3 className="text-6xl font-extrabold text-teal-600 dark:text-teal-400 mb-2">45</h3>
+              <p className="text-black dark:text-white text-lg font-medium">Hours of Intensive Learning</p>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">

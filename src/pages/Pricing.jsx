@@ -38,9 +38,9 @@ export default function Pricing() {
         {/* HEADER */}
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 font-[Poppins] text-black">
-            Crash 45 <span className="text-black">Pricing</span>
+            Crash 45 <span className="text-black dark:text-white">Pricing</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Simple, transparent pricing with complete academic support.
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function Pricing() {
                 relative p-8 md:p-10 rounded-3xl border transition-all duration-300
                 ${plan.highlight ?
                   "border-[#f8ba2b] shadow-xl scale-105 z-10" :
-                  "border-gray-200"
+                  "border-gray-200 dark:border-zinc-800"
                 }
                 bg-transparent
                 card
@@ -75,7 +75,7 @@ export default function Pricing() {
               {plan.highlight && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2
                   bg-gradient-to-r from-[#f8ba2b] to-orange-400 text-black text-sm font-bold
-                  px-6 py-2 rounded-full shadow-lg ring-4 ring-[#fff5d6]
+                  px-6 py-2 rounded-full shadow-lg ring-4 ring-[#fff5d6] dark:ring-zinc-800
                   whitespace-nowrap">
                   ⭐ Most Chosen by Students
                 </div>
@@ -83,20 +83,20 @@ export default function Pricing() {
 
               {/* TITLE */}
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-[#008080]">
+                <h3 className="text-2xl font-bold text-[#008080] dark:text-teal-400">
                   {plan.title}
                 </h3>
-                <p className="text-sm font-semibold text-gray-500 mt-1 uppercase tracking-wide">
+                <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wide">
                   {plan.sub}
                 </p>
               </div>
 
               {/* PRICE */}
               <div className="text-center mt-6">
-                <p className="text-5xl font-extrabold text-gray-900">
+                <p className="text-5xl font-extrabold text-gray-900 dark:text-white">
                   {plan.price}
                 </p>
-                <p className="text-sm text-gray-500 mt-2">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
                   Complete program fee · No hidden charges
                 </p>
               </div>

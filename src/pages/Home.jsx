@@ -29,7 +29,7 @@ export default function Home() {
             Full Revision <br />
             Full Mastery
             <br />
-            <span className="text-black block">In Just 45 Hours.</span>
+            <span className="text-black dark:text-white block">In Just 45 Hours.</span>
           </motion.h1>
 
           {/* FEATURES */}

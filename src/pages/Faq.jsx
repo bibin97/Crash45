@@ -77,9 +77,9 @@ Each test includes faculty evaluation + performance insight + improvement pointe
       {/* MAIN HEADING */}
       {/* MAIN HEADING */}
       <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-center font-[Poppins]">
-        Common Questions <span className="text-black">About Crash 45</span>
+        Common Questions <span className="text-black dark:text-white">About Crash 45</span>
       </h2>
-      <p className="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+      <p className="text-center text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
         Clear answers to the most common questions from students and parents.
       </p>
 
@@ -94,7 +94,7 @@ Each test includes faculty evaluation + performance insight + improvement pointe
 
               {/* QUESTION */}
               {/* QUESTION */}
-              <h2 className="text-lg font-bold text-[#008080] group-hover:text-teal-600 transition-colors">
+              <h2 className="text-lg font-bold text-[#008080] dark:text-teal-400 group-hover:text-teal-600 dark:group-hover:text-teal-300 transition-colors">
                 {faq.q}
               </h2>
 
