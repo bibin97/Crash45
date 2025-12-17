@@ -66,7 +66,7 @@ export default function Who() {
           <button className="px-8 py-3.5 bg-gradient-to-r from-yellow-600 to-yellow-300 text-white rounded-full font-bold text-lg shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all mb-4">
             Talk to a Mentor
           </button>
-          <p className="text-sm text-gray-500 italic opacity-80">
+          <p className="text-sm text-gray-900 dark:text-white italic opacity-80">
             *Not suitable for students looking for group classes or shortcuts.
           </p>
         </div>

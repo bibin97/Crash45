@@ -94,7 +94,7 @@ Each test includes faculty evaluation + performance insight + improvement pointe
 
               {/* QUESTION */}
               {/* QUESTION */}
-              <h2 className="text-lg font-bold text-[#008080] dark:text-teal-400 group-hover:text-teal-600 dark:group-hover:text-teal-300 transition-colors">
+              <h2 className="text-lg font-bold text-[#008080] dark:text-teal-400 group-hover:text-teal-600 dark:group-hover:text-teal-300 transition-colors border-white dark:border-gray-950">
                 {faq.q}
               </h2>
 
@@ -117,7 +117,7 @@ Each test includes faculty evaluation + performance insight + improvement pointe
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <p className="mt-4 border-t border-gray-100 text-sm md:text-[15px] text-gray-600 whitespace-pre-line leading-relaxed">
+                  <p className="mt-4 border-t border-gray-100 text-sm md:text-[15px] text-gray-900 whitespace-pre-line leading-relaxed">
                     {faq.a}
                   </p>
                 </motion.div>
@@ -133,19 +133,19 @@ Each test includes faculty evaluation + performance insight + improvement pointe
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="mt-16 text-center  rounded-3xl p-8 md:p-12 border border-teal-100 bg-white"
+        className="mt-16 text-center  rounded-3xl p-8 md:p-12 border border-white bg-white dark:bg-black"
       >
-        <h3 className="text-2xl font-bold text-gray-800 mb-2">
+        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
           Still have questions?
         </h3>
-        <p className="text-gray-600 mb-8 max-w-xl mx-auto">
+        <p className="text-gray-600 dark:text-white mb-8 max-w-xl mx-auto">
           We understand that choosing the right program is important. Talk to our academic counselor to get clear answers.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-3.5 bg-[#008080] text-white rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all text-lg">
+          <button className="px-8 py-3.5 bg-yellow-400 text-white hover:bg-teal-700 rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all text-lg">
             Enroll Now
           </button>
-          <button className="px-8 py-3.5 bg-white border-2 border-[#008080] text-[#008080] rounded-full font-bold hover:bg-[#008080]/5 transition-all text-lg">
+          <button className="px-8 py-3.5 bg-white border-2 border-[#008080] text-[#008080] rounded-full font-bold hover:bg-yellow-400 transition-all text-lg">
             Talk to a Mentor
           </button>
         </div>

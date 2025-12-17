@@ -86,7 +86,7 @@ export default function Pricing() {
                 <h3 className="text-2xl font-bold text-[#008080] dark:text-teal-400">
                   {plan.title}
                 </h3>
-                <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wide">
+                <p className="text-sm font-semibold text-gray-900 dark:text-white mt-1 uppercase tracking-wide">
                   {plan.sub}
                 </p>
               </div>
@@ -96,7 +96,7 @@ export default function Pricing() {
                 <p className="text-5xl font-extrabold text-gray-900 dark:text-white">
                   {plan.price}
                 </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                <p className="text-sm text-gray-900 dark:text-white mt-2">
                   Complete program fee · No hidden charges
                 </p>
               </div>
@@ -111,7 +111,7 @@ export default function Pricing() {
                     <div className="w-6 h-6 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-xs font-bold">
                       ✓
                     </div>
-                    <span className="text-gray-700 text-lg font-medium">{f}</span>
+                    <span className="text-gray-900 dark:text-white text-lg font-medium">{f}</span>
                   </li>
                 ))}
               </ul>
@@ -137,7 +137,7 @@ export default function Pricing() {
         </div>
 
         {/* Bottom Comparison Line */}
-        <p className="text-center text-sm text-gray-500 mt-8">
+        <p className="text-center text-sm text-gray-900 dark:text-white mt-8">
           ✨ Both plans include study materials, tests, and full 1:1 mentor support.
         </p>
       </div>

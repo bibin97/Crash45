@@ -17,7 +17,7 @@ export default function Cta() {
           <h2 className="text-3xl font-extrabold">
             Ready to boost your exam scores?
           </h2>
-          <p className="mt-2 text-sm md:text-base text-gray-600">
+          <p className="mt-2 text-sm md:text-base text-gray-900 dark:text-white">
             Complete syllabus coverage with personal mentor guidance.
           </p>
         </div>

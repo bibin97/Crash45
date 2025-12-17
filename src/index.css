@@ -2,7 +2,16 @@
    BASE IMPORTS
 =========================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+/* Enable class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
 
 html {
   scroll-behavior: smooth;
@@ -19,20 +28,26 @@ body {
 =========================================================== */
 
 /* Headings */
-body h1,
-body h2,
-body h3,
-body h4,
-body h5,
-body h6 {
-  color: #008080 !important;
-  /* Premium teal */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif !important;
 }
 
 /* Paragraphs / lists */
 body {
+  font-family: "Inter", sans-serif !important;
   background: #f7f7f8;
   color: #071525;
+}
+
+/* Dark mode overrides if needed globally */
+.dark body {
+  background: #05070d;
+  color: #f3f4f6;
 }
 
 /* Chips */
@@ -66,7 +81,6 @@ button:not(.nav-item):hover {
 =========================================================== */
 .nav-item {
   background: transparent !important;
-  color: inherit !important;
   border-radius: 0 !important;
   padding: 6px 0 !important;
   border: none !important;
@@ -98,8 +112,20 @@ button:not(.nav-item):hover {
 
 /* Remove scaling hover from nav only */
 .nav-item:hover {
-  transform: none !important;
+  transform: none;
 }
+
+/* Force dark mode color for nav items */
+.dark .nav-item {
+  color: #ffffff !important;
+}
+
+.dark .nav-item:hover {
+  color: #2dd4bf !important;
+  /* teal-400 */
+}
+
+
 
 /* ===========================================================
    CURSOR

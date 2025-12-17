@@ -86,17 +86,17 @@ export default function Home() {
             <div className="mt-3 flex flex-col gap-2 font-[Poppins] text-[15px]">
 
               <div className="flex items-start gap-2">
-                <span className="w-3 h-3 rounded-full bg-[#008080]  mt-1 shadow-md"></span>
+                <span className="w-3 h-3 rounded-full bg-black dark:bg-white  mt-1 shadow-md"></span>
                 <p className="opacity-80">Trusted by 3700+ Parents</p>
               </div>
 
               <div className="flex items-start gap-2">
-                <span className="w-3 h-3 rounded-full bg-[#008080]  mt-1 shadow-md"></span>
+                <span className="w-3 h-3 rounded-full bg-black dark:bg-white  mt-1 shadow-md"></span>
                 <p className="opacity-80">Designed by Top Educators</p>
               </div>
 
               <div className="flex items-start gap-2">
-                <span className="w-3 h-3 rounded-full bg-[#008080] mt-1 shadow-md"></span>
+                <span className="w-3 h-3 rounded-full bg-black dark:bg-white mt-1 shadow-md"></span>
                 <p className="opacity-80">Avg Improvement: +47 Marks in 45 Hours</p>
               </div>
 

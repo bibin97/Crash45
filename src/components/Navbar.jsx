@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import logo from "../assets/logo.png";
 
 export default function Navbar({ scrollRefs }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,11 +38,19 @@ export default function Navbar({ scrollRefs }) {
 
         {/* LOGO */}
         <motion.div
-          className="text-2xl font-black cursor-pointer flex items-center gap-1"
+          className="cursor-pointer flex items-center"
           whileHover={{ scale: 1.05 }}
           onClick={() => scrollToSection(scrollRefs.home)}
         >
-          <h1 className="text-teal-500">CRASH <span className="text-black dark:text-white">45</span></h1>
+          {/* Use mix-blend-mode or filter to handle transparency better if needed, 
+              but since we have white background logo, mix-blend-multiply works for light mode 
+              and invert for dark mode often works but check if BG is white. 
+              Let's assume the logo has a white background. */}
+          <img
+            src={logo}
+            alt="Crash 45"
+            className="h-10 md:h-14 w-auto object-contain dark:invert dark:brightness-200"
+          />
         </motion.div>
 
         {/* DESKTOP MENU */}
@@ -53,7 +62,7 @@ export default function Navbar({ scrollRefs }) {
               className="
                 nav-item group
                 text-base font-semibold 
-                text-gray-800 dark:text-gray-200
+                text-gray-800 dark:text-white
                 transition-all 
                 relative 
                 cursor-pointer

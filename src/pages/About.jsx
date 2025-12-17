@@ -144,16 +144,16 @@ export default function About() {
 
               {/* Card */}
               <div className=" rounded-2xl shadow-lg p-6 w-full border  border-gray-200 dark:border-white/10 hover:shadow-2xl transition-all duration-300 bg-white dark:bg-[#18181b]">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-2xl">{step.icon}</span>
-                  {step.hours && (
-                    <span className="text-sm text-neutral-700">{step.hours}</span>
-                  )}
-                </div>
-
-                <h3 className="text-lg font-[Poppins] font-semibold mb-3 text-[#008080]">
+                <h3 className="text-lg font-[Poppins] font-semibold mb-2 text-[#008080] dark:text-teal-400">
                   {step.title}
                 </h3>
+
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-2xl">{step.icon}</span>
+                  {step.hours && (
+                    <span className="text-sm text-neutral-700 dark:text-white font-medium">{step.hours}</span>
+                  )}
+                </div>
 
                 <ul className="text-black dark:text-white space-y-2 text-sm">
                   {step.bullets.map((bullet, i) => (

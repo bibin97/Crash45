@@ -103,24 +103,24 @@ export default function WhyUs() {
               {/* Card 1 */}
               <div className=" rounded-3xl p-4 shadow-lg border border-gray-100 flex flex-col items-center justify-center text-center transform hover:-translate-y-1 transition-transform h-32 card">
                 <Handshake className="text-teal-600 mb-2" size={28} />
-                <h4 className="font-bold text-black text-xs md:text-sm leading-tight">1:1 Mentor</h4>
+                <h4 className="font-bold text-black dark:text-white text-xs md:text-sm leading-tight">1:1 Mentor</h4>
               </div>
 
               {/* Card 2 */}
               <div className=" rounded-3xl p-4 shadow-lg border border-gray-100 flex flex-col items-center justify-center text-center transform hover:-translate-y-1 transition-transform h-32 card">
                 <BookOpen className="text-teal-600 mb-2" size={28} />
-                <h4 className="font-bold text-black text-xs md:text-sm leading-tight">100% Syllabus</h4>
+                <h4 className="font-bold text-black dark:text-white text-xs md:text-sm leading-tight">100% Syllabus</h4>
               </div>
 
               {/* Card 3 */}
               <div className=" rounded-3xl p-4 shadow-lg border border-gray-100 flex flex-col items-center justify-center text-center transform hover:-translate-y-1 transition-transform h-32 card">
                 <Clock className="text-teal-600 mb-2" size={28} />
-                <h4 className="font-bold text-black text-xs md:text-sm leading-tight">Flexible Time</h4>
+                <h4 className="font-bold text-black dark:text-white text-xs md:text-sm leading-tight">Flexible Time</h4>
               </div>
             </div>
 
             <div className="hidden md:block text-center mt-4">
-              <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full card shadow-md text-sm font-bold text-black transform hover:scale-105 transition-transform">
+              <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full card shadow-md text-sm font-bold text-black dark:text-white transform hover:scale-105 transition-transform">
                 ⭐ Trusted by 100+ students
               </span>
             </div>
