@@ -23,7 +23,7 @@ export default function Who() {
         className="text-center text-4xl md:text-5xl font-extrabold font-[Poppins] mb-4"
       >
         Who Is{" "}
-        <span className="bg-gradient-to-r from-[#008080] to-[#f8ba2b] bg-clip-text text-transparent">
+        <span className="text-black">
           Crash 45 Perfect For?
         </span>
       </motion.h2>
@@ -32,7 +32,7 @@ export default function Who() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-center text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto"
+        className="text-center text-lg text-gray-600 mb-10 max-w-2xl mx-auto"
       >
         Designed for students who want clarity, confidence, and high exam scores.
       </motion.p>
@@ -42,7 +42,7 @@ export default function Who() {
         initial={{ scale: 0.95, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="about-card rounded-3xl p-8 md:p-12 mx-auto max-w-4xl border border-gray-100 dark:border-white/10 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+        className="about-card rounded-3xl p-8 md:p-12 mx-auto max-w-4xl border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
       >
         <ul className="grid md:grid-cols-2 gap-6 mb-10">
           {points.map((item, i) => (
@@ -54,9 +54,9 @@ export default function Who() {
               className="flex items-center gap-4 text-lg"
             >
               <div className="flex-shrink-0 w-10 h-10 rounded-full  flex items-center justify-center">
-                <item.icon className="text-gray-600 dark:text-teal-400" size={28} />
+                <item.icon className="text-gray-600" size={28} />
               </div>
-              <span className="text-gray-800 dark:text-gray-100 font-medium">{item.text}</span>
+              <span className="text-gray-800 font-medium">{item.text}</span>
             </motion.li>
           ))}
         </ul>
@@ -66,7 +66,7 @@ export default function Who() {
           <button className="px-8 py-3.5 bg-gradient-to-r from-yellow-600 to-yellow-300 text-white rounded-full font-bold text-lg shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all mb-4">
             Talk to a Mentor
           </button>
-          <p className="text-sm text-gray-500 dark:text-gray-400 italic opacity-80">
+          <p className="text-sm text-gray-500 italic opacity-80">
             *Not suitable for students looking for group classes or shortcuts.
           </p>
         </div>

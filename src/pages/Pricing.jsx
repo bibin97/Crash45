@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Cta from "../components/Cta";
-export default function Pricing({ darkMode }) {
+export default function Pricing() {
   const plans = [
     {
       title: "Crash 45 (HSS)",
@@ -37,10 +37,10 @@ export default function Pricing({ darkMode }) {
 
         {/* HEADER */}
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 font-[Poppins] text-black dark:text-white">
-            Crash 45 <span className="text-[#008080] dark:text-[#008080]">Pricing</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 font-[Poppins] text-black">
+            Crash 45 <span className="text-black">Pricing</span>
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Simple, transparent pricing with complete academic support.
           </p>
         </div>
@@ -59,20 +59,23 @@ export default function Pricing({ darkMode }) {
                 relative p-8 md:p-10 rounded-3xl border transition-all duration-300
                 ${plan.highlight ?
                   "border-[#f8ba2b] shadow-xl scale-105 z-10" :
-                  "border-gray-200 dark:border-zinc-800"
+                  "border-gray-200"
                 }
+                bg-transparent
+                card
+                
               `}
-              style={{
-                backgroundColor: darkMode ? "#18181b" : "#ffffff",
-                color: darkMode ? "#ffffff" : "#000000"
-              }}
+            // style={{
+            //   backgroundColor: darkMode ? "#18181b" : "#ffffff",
+            //   color: darkMode ? "#ffffff" : "#000000"
+            // }}
             >
 
               {/* Recommended Tag */}
               {plan.highlight && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2
                   bg-gradient-to-r from-[#f8ba2b] to-orange-400 text-black text-sm font-bold
-                  px-6 py-2 rounded-full shadow-lg ring-4 ring-[#fff5d6] dark:ring-zinc-800
+                  px-6 py-2 rounded-full shadow-lg ring-4 ring-[#fff5d6]
                   whitespace-nowrap">
                   ⭐ Most Chosen by Students
                 </div>
@@ -80,35 +83,35 @@ export default function Pricing({ darkMode }) {
 
               {/* TITLE */}
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-[#008080] dark:text-teal-400">
+                <h3 className="text-2xl font-bold text-[#008080]">
                   {plan.title}
                 </h3>
-                <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wide">
+                <p className="text-sm font-semibold text-gray-500 mt-1 uppercase tracking-wide">
                   {plan.sub}
                 </p>
               </div>
 
               {/* PRICE */}
               <div className="text-center mt-6">
-                <p className="text-5xl font-extrabold text-gray-900 dark:text-white">
+                <p className="text-5xl font-extrabold text-gray-900">
                   {plan.price}
                 </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                <p className="text-sm text-gray-500 mt-2">
                   Complete program fee · No hidden charges
                 </p>
               </div>
 
               {/* Divider */}
-              <div className="w-full h-px bg-gray-100 dark:bg-zinc-700 my-8"></div>
+              <div className="w-full h-px bg-gray-100 my-8"></div>
 
               {/* FEATURES */}
               <ul className="space-y-4 mb-8">
                 {plan.features.map((f, i) => (
                   <li key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 flex items-center justify-center text-xs font-bold">
+                    <div className="w-6 h-6 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-xs font-bold">
                       ✓
                     </div>
-                    <span className="text-gray-700 dark:text-gray-200 text-lg font-medium">{f}</span>
+                    <span className="text-gray-700 text-lg font-medium">{f}</span>
                   </li>
                 ))}
               </ul>
@@ -125,7 +128,7 @@ export default function Pricing({ darkMode }) {
               </motion.button>
 
               {/* Risk Reduction */}
-              <p className="text-center text-xs text-gray-500 dark:text-gray-400 mt-4">
+              <p className="text-center text-xs text-gray-500 mt-4">
                 🔒 100% syllabus completion guaranteed
               </p>
 
@@ -134,11 +137,11 @@ export default function Pricing({ darkMode }) {
         </div>
 
         {/* Bottom Comparison Line */}
-        <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-8">
+        <p className="text-center text-sm text-gray-500 mt-8">
           ✨ Both plans include study materials, tests, and full 1:1 mentor support.
         </p>
       </div>
-      <Cta darkMode={darkMode} />
+      <Cta />
     </section >
 
   );

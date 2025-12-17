@@ -29,7 +29,7 @@ export default function Home() {
             Full Revision <br />
             Full Mastery
             <br />
-            <span className="hero block">In Just 45 Hours.</span>
+            <span className="text-black block">In Just 45 Hours.</span>
           </motion.h1>
 
           {/* FEATURES */}
@@ -76,7 +76,7 @@ export default function Home() {
                         shadow-md transition-all duration-300 w-fit
                         flex items-center gap-2 hover:-translate-y-1 hover:shadow-lg relative overflow-hidden"
             >
-              Book Your Seat Now 
+              Book Your Seat Now
             </button>
 
             <p className="text-md mt-2 opacity-70 font-[Poppins]">
@@ -122,7 +122,7 @@ export default function Home() {
                 <div
                   className="
                     text-3xl font-extrabold
-                    bg-[#008080] bg-clip-text text-transparent  dark:text-clip
+                    bg-[#008080] bg-clip-text text-transparent
                     group-hover:brightness-110
                     transition-all duration-300
                   "
@@ -139,7 +139,7 @@ export default function Home() {
                     w-6 h-1 bg-[#008080]
                     mx-auto mt-2 rounded-full opacity-60
                     group-hover:w-8 group-hover:opacity-90
-                    transition-all duration-300 dark:bg-white
+                    transition-all duration-300
                   "
                 ></div>
               </motion.div>
@@ -147,24 +147,24 @@ export default function Home() {
           </div>
         </div>
 
-       {/* RIGHT SIDE — STUDENT IMAGE MOVED UP */}
-<motion.div
-  initial={{ opacity: 0, x: 40 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.7 }}
-  className="
+        {/* RIGHT SIDE — STUDENT IMAGE MOVED UP */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          className="
     relative flex justify-center md:justify-end items-start 
     h-full 
     md:-translate-y-24   /* ⬆️ Move image up on medium+ screens */
     -translate-y-10      /* Slight lift on mobile */
   "
->
-  <img
-    src={homeimg}
-    alt="Crash 45 Study Illustration"
-    className="w-full max-w-sm md:max-w-md lg:max-w-lg drop-shadow-xl relative z-10"
-  />
-</motion.div>
+        >
+          <img
+            src={homeimg}
+            alt="Crash 45 Study Illustration"
+            className="w-full max-w-sm md:max-w-md lg:max-w-lg drop-shadow-xl relative z-10"
+          />
+        </motion.div>
 
 
       </div>

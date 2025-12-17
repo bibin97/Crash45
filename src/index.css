@@ -17,12 +17,6 @@ body {
 /* ===========================================================
    LIGHT MODE (DEFAULT)
 =========================================================== */
-body {
-  background: #f7f7f8 !important;
-  /* Premium silver */
-  color: #071525 !important;
-  /* Premium dark text */
-}
 
 /* Headings */
 body h1,
@@ -36,17 +30,9 @@ body h6 {
 }
 
 /* Paragraphs / lists */
-body p,
-body,
-body li {
-  color: #1a1f2b !important;
-}
-
-/* Cards */
-body .card {
-  background: #ffffff !important;
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  color: #071525 !important;
+body {
+  background: #f7f7f8;
+  color: #071525;
 }
 
 /* Chips */
@@ -74,46 +60,6 @@ button:not(.nav-item):hover {
   transform: scale(1.03);
 }
 
-/* ===========================================================
-   DARK MODE
-=========================================================== */
-.dark body {
-  background: #05070d !important;
-  color: #f3f4f6 !important;
-}
-
-/* Dark headings */
-.dark h1,
-.dark h2,
-.dark h3,
-.dark h4,
-.dark h5,
-.dark h6 {
-  color: #4fd1c5 !important;
-}
-
-/* Dark text */
-.dark p,
-.dark,
-.dark li {
-  color: #dce1e8 !important;
-}
-
-/* Dark cards */
-/* Dark cards */
-.dark .card {
-  background: #18181b !important;
-  /* Proper Dark */
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  color: #ffffff !important;
-}
-
-/* Dark chip */
-.dark .chip {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
-}
 
 /* ===========================================================
    NAVBAR — REMOVE BACKGROUND STYLE FROM MENU BUTTONS
@@ -156,13 +102,6 @@ button:not(.nav-item):hover {
 }
 
 /* ===========================================================
-   TRANSPARENT PAGE SECTIONS
-=========================================================== */
-section {
-  background: transparent !important;
-}
-
-/* ===========================================================
    CURSOR
 =========================================================== */
 .magnetic-cursor {
@@ -184,15 +123,9 @@ section {
 }
 
 /* NAVBAR TEXT FIX */
-/* NAVBAR TEXT FIX */
 .nav-item {
   color: #071525 !important;
   /* light mode */
-}
-
-.dark .nav-item {
-  color: #ffffff !important;
-  /* dark mode */
 }
 
 .nav-item:hover {
@@ -206,150 +139,8 @@ nav a {
   pointer-events: auto;
 }
 
-:root span {
-  color: #000;
-}
-
-.dark span {
-  color: #fff;
-}
-
-/* .dark .card, 
-.dark .card * {
-  color: #ffffff !important;
-} */
-
-/* --- PREMIUM Full Mastery Glow Pill --- */
-
-.fullmastery-pill {
-  position: relative;
-  display: inline-block;
-  padding: 0.35rem 1rem;
-  font-weight: 800;
-  border-radius: 0.75rem;
-  color: #004d48;
-  background: linear-gradient(90deg, rgba(248, 186, 43, 0.18), rgba(0, 167, 157, 0.12));
-  border: 1px solid rgba(248, 186, 43, 0.35);
-  backdrop-filter: blur(6px);
-  z-index: 1;
-}
-
-/* Outer animated halo */
-.fullmastery-pill::after {
-  content: "";
-  position: absolute;
-  inset: -8px;
-  border-radius: inherit;
-  background: radial-gradient(circle,
-      rgba(248, 186, 43, 0.35),
-      rgba(0, 167, 157, 0.25),
-      transparent);
-  filter: blur(18px);
-  opacity: 0.8;
-  animation: masteryBreath 2.8s ease-in-out infinite;
-  z-index: -1;
-}
-
-/* Breathing glow animation */
-@keyframes masteryBreath {
-  0% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-
-  50% {
-    transform: scale(1.06);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-}
-
-/* Hover boost */
-.fullmastery-pill:hover::after {
-  filter: blur(26px);
-  opacity: 1;
-  transform: scale(1.08);
-}
-
-/* Mobile responsive */
-@media (max-width: 640px) {
-  .fullmastery-pill {
-    padding: 0.28rem 0.75rem;
-    font-size: 0.9rem;
-  }
-
-  .fullmastery-pill::after {
-    inset: -6px;
-    filter: blur(14px);
-  }
-}
-
-/* ===========================================================
-   UNIVERSAL ABOUT CARD STYLING (LIGHT + DARK MODE)
-=========================================================== */
-
-.about-card {
-  border-radius: 20px !important;
-  padding: 28px !important;
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
-  transition: 0.3s ease-in-out !important;
-}
-
-/* Light Mode */
-body .about-card {
-  background: #ffffff !important;
-  color: #071525 !important;
-}
-
-/* Dark Mode */
-.dark .about-card {
-  background: #18181b !important;
-  /* Proper Dark */
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  color: #ffffff !important;
-}
-
-/* Title inside card */
-.about-card h3 {
-  color: #008080 !important;
-  /* teal */
-  font-weight: 700 !important;
-}
-
-.dark .about-card h3 {
-  color: #4fd1c5 !important;
-  /* lighter teal for dark mode */
-}
-
-/* Bullet text */
-.about-card li,
-.about-card p,
-.about-card span {
-  color: inherit !important;
-  /* automatically adjusts for dark/light */
-}
-
 /* Hover effect */
 .about-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.15) !important;
-}
-
-/* ===========================================================
-   SAFE UNIVERSAL SPAN COLOR FIX (DO NOT OVERRIDE HEADING COLORS)
-=========================================================== */
-
-/* Light mode → span text black */
-body span:not(.text-transparent):not(.special-span) {
-  color: #000 !important;
-}
-
-/* Dark mode → span text white */
-.dark span:not(.text-transparent):not(.special-span) {
-  color: #ffffff !important;
 }

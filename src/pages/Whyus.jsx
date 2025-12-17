@@ -24,7 +24,7 @@ export default function WhyUs() {
         className="text-center text-4xl md:text-5xl font-extrabold font-[Poppins] mb-4"
       >
         Why Students & Parents {" "}
-        <span className="bg-gradient-to-r from-[#008080] to-[#f8ba2b] bg-clip-text text-transparent">
+        <span className="text-black">
           Trust Crash 45
         </span>
       </motion.h2>
@@ -33,7 +33,7 @@ export default function WhyUs() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-center text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto"
+        className="text-center text-lg  mb-10 max-w-2xl mx-auto"
       >
         A focused 45-hour crash program designed for maximum marks, clarity, and confidence.
       </motion.p>
@@ -46,7 +46,7 @@ export default function WhyUs() {
           transition={{ duration: 0.6 }}
           className="space-y-8"
         >
-          <div className="bg-white/50 dark:bg-white/5 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-gray-100 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="card backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300">
             <ul className="space-y-6">
               {points.map((p, i) => (
                 <motion.li
@@ -56,10 +56,10 @@ export default function WhyUs() {
                   transition={{ delay: 0.2 + i * 0.1 }}
                   className="flex items-center gap-4 text-lg"
                 >
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-teal-600 dark:bg-teal-500 flex items-center justify-center shadow-md">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center shadow-md">
                     <CheckCircle className="text-white" size={20} />
                   </div>
-                  <span className="text-gray-800 dark:text-gray-100 font-medium">{p}</span>
+                  <span className="text-black font-medium">{p}</span>
                 </motion.li>
               ))}
             </ul>
@@ -80,7 +80,7 @@ export default function WhyUs() {
 
           {/* Trust Signal - Mobile/Tablet placement (optional, keeping it near content) */}
           <div className="md:hidden text-center">
-            <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full  border border-gray-200 dark:border-zinc-800 shadow-lg text-sm font-bold text-black dark:text-white">
+            <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full card shadow-lg text-sm font-bold text-black">
               ⭐ Trusted by 100+ students
             </span>
           </div>
@@ -94,33 +94,33 @@ export default function WhyUs() {
           className="relative"
         >
           <div className="grid gap-6">
-            <div className=" rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-white/10 transform hover:scale-[1.02] transition-transform flex flex-col justify-center text-center bg-white dark:bg-[#18181b]">
-              <h3 className="text-6xl font-extrabold text-teal-600 dark:text-teal-400 mb-2">45</h3>
-              <p className="text-gray-600 dark:text-white text-lg font-medium">Hours of Intensive Learning</p>
+            <div className=" rounded-3xl p-8 shadow-xl border border-gray-100 transform hover:scale-[1.02] transition-transform flex flex-col justify-center text-center card">
+              <h3 className="text-6xl font-extrabold text-teal-600 mb-2">45</h3>
+              <p className="text-black text-lg font-medium">Hours of Intensive Learning</p>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {/* Card 1 */}
-              <div className=" rounded-3xl p-4 shadow-lg border border-gray-100 dark:border-white/10 flex flex-col items-center justify-center text-center transform hover:-translate-y-1 transition-transform h-32 bg-white dark:bg-[#18181b]">
-                <Handshake className="text-teal-600 dark:text-teal-400 mb-2" size={28} />
-                <h4 className="font-bold text-gray-900 dark:text-white text-xs md:text-sm leading-tight">1:1 Mentor</h4>
+              <div className=" rounded-3xl p-4 shadow-lg border border-gray-100 flex flex-col items-center justify-center text-center transform hover:-translate-y-1 transition-transform h-32 card">
+                <Handshake className="text-teal-600 mb-2" size={28} />
+                <h4 className="font-bold text-black text-xs md:text-sm leading-tight">1:1 Mentor</h4>
               </div>
 
               {/* Card 2 */}
-              <div className=" rounded-3xl p-4 shadow-lg border border-gray-100 dark:border-white/10 flex flex-col items-center justify-center text-center transform hover:-translate-y-1 transition-transform h-32 bg-white dark:bg-[#18181b]">
-                <BookOpen className="text-teal-600 dark:text-teal-400 mb-2" size={28} />
-                <h4 className="font-bold text-gray-900 dark:text-white text-xs md:text-sm leading-tight">100% Syllabus</h4>
+              <div className=" rounded-3xl p-4 shadow-lg border border-gray-100 flex flex-col items-center justify-center text-center transform hover:-translate-y-1 transition-transform h-32 card">
+                <BookOpen className="text-teal-600 mb-2" size={28} />
+                <h4 className="font-bold text-black text-xs md:text-sm leading-tight">100% Syllabus</h4>
               </div>
 
               {/* Card 3 */}
-              <div className=" rounded-3xl p-4 shadow-lg border border-gray-100 dark:border-white/10 flex flex-col items-center justify-center text-center transform hover:-translate-y-1 transition-transform h-32 bg-white dark:bg-[#18181b]">
-                <Clock className="text-teal-600 dark:text-teal-400 mb-2" size={28} />
-                <h4 className="font-bold text-gray-900 dark:text-white text-xs md:text-sm leading-tight">Flexible Time</h4>
+              <div className=" rounded-3xl p-4 shadow-lg border border-gray-100 flex flex-col items-center justify-center text-center transform hover:-translate-y-1 transition-transform h-32 card">
+                <Clock className="text-teal-600 mb-2" size={28} />
+                <h4 className="font-bold text-black text-xs md:text-sm leading-tight">Flexible Time</h4>
               </div>
             </div>
 
             <div className="hidden md:block text-center mt-4">
-              <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-[#18181b] border border-gray-200 dark:border-zinc-800 shadow-md text-sm font-bold text-black transform hover:scale-105 transition-transform dark:text-white">
+              <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full card shadow-md text-sm font-bold text-black transform hover:scale-105 transition-transform">
                 ⭐ Trusted by 100+ students
               </span>
             </div>

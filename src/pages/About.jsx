@@ -54,7 +54,7 @@ export default function About() {
           className="text-center font-[Poppins] text-4xl md:text-5xl font-extrabold mb-8"
         >
           How Crash45{" "}
-          <span className="text-[#008080]">Works</span>
+          <span className="text-black">Works</span>
         </motion.h2>
 
         {/* Gradient DEFINITIONS */}
@@ -137,31 +137,34 @@ export default function About() {
                   background: `linear-gradient(135deg, ${step.colorStart}, ${step.colorEnd})`,
                 }}
               >
-                <span className="text-black dark:text-white font-extrabold text-lg">
+                <span className="text-black font-extrabold text-lg">
                   {step.id}
                 </span>
               </div>
 
               {/* Card */}
-              <div className=" rounded-2xl shadow-lg p-6 w-full border border-gray-200 dark:border-white/10 hover:shadow-2xl transition-all duration-300">
+              <div className=" rounded-2xl shadow-lg p-6 w-full border  border-gray-200 hover:shadow-2xl transition-all duration-300 bg-white">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-2xl">{step.icon}</span>
                   {step.hours && (
-                    <span className="text-sm text-neutral-700 dark:text-white">{step.hours}</span>
+                    <span className="text-sm text-neutral-700">{step.hours}</span>
                   )}
                 </div>
 
-                <h3 className="text-lg font-[Poppins] font-semibold mb-3 text-[#008080] dark:text-teal-300">
+                <h3 className="text-lg font-[Poppins] font-semibold mb-3 text-[#008080]">
                   {step.title}
                 </h3>
 
-                <ul className="text-black dark:text-white space-y-2 text-sm">
-                  {step.bullets.map((b, i) => (
+                <ul className="text-black space-y-2 text-sm">
+                  {step.bullets.map((bullet, i) => (
                     <li key={i} className="flex gap-2">
-                      <span className="font-bold">•</span> {b}
+                      <span className="font-bold">•</span>
+                      <span>{bullet}</span>
                     </li>
                   ))}
                 </ul>
+
+
               </div>
             </motion.div>
           ))}

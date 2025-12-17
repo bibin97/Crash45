@@ -13,12 +13,6 @@ import Faq from "./pages/Faq";
 import Testimonials from "./pages/Testimonials";
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  // Apply theme class to <html> for dark mode
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
-  }, [darkMode]);
 
   // ALL scroll refs declared here (notice 'faq' lowercase)
   const scrollRefs = {
@@ -36,8 +30,6 @@ export default function App() {
     <div>
       <Navbar
         scrollRefs={scrollRefs}
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
       />
 
       <main className="pt-28">
@@ -67,13 +59,13 @@ export default function App() {
         </section>
 
         <section ref={scrollRefs.testimonials}>
-          <Testimonials darkMode={darkMode} />
+          <Testimonials />
         </section>
 
         <section ref={scrollRefs.pricing}>
-          <Pricing darkMode={darkMode} />
+          <Pricing />
         </section>
-        <Footer darkMode={darkMode} />
+        <Footer />
       </main>
     </div>
   );

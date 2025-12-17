@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu } from "lucide-react"; // ✅ proper icon
 
-export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
+export default function Navbar({ scrollRefs }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navItems = [
@@ -39,22 +39,8 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
           whileHover={{ scale: 1.05 }}
           onClick={() => scrollToSection(scrollRefs.home)}
         >
-          <h1 className="text-teal-500">CRASH <span>45</span></h1>
+          <h1 className="text-teal-500">CRASH <span className="text-black">45</span></h1>
         </motion.div>
-
-        {/* THEME TOGGLE (ALWAYS IN NAVBAR) */}
-        <motion.button
-          onClick={() => setDarkMode(!darkMode)}
-          className="md:hidden w-10 h-10 flex items-center justify-center rounded-full transition mr-4"
-          style={{
-            backgroundColor: darkMode ? "#f8ba2b" : "#008080",
-            color: darkMode ? "black" : "white",
-          }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          {darkMode ? "☀️" : "🌙"}
-        </motion.button>
 
         {/* DESKTOP MENU */}
         <div className="hidden md:flex items-center gap-8">
@@ -86,20 +72,6 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
             </motion.button>
           ))}
 
-          {/* DESKTOP THEME TOGGLE */}
-          <motion.button
-            onClick={() => setDarkMode(!darkMode)}
-            className="w-10 h-10 flex items-center justify-center rounded-full transition"
-            style={{
-              backgroundColor: darkMode ? "#f8ba2b" : "#008080",
-              color: darkMode ? "black" : "white",
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            {darkMode ? "☀️" : "🌙"}
-          </motion.button>
-
           {/* ENROLL BUTTON */}
           <motion.button
             className="px-6 py-2 rounded-full font-bold bg-[#f8ba2b] text-black"
@@ -115,9 +87,9 @@ export default function Navbar({ scrollRefs, darkMode, setDarkMode }) {
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden"
         >
-          <Menu 
-            size={28} 
-            className={`${darkMode ? "text-white" : "text-black"}`} 
+          <Menu
+            size={28}
+            className="text-black"
           />
         </button>
       </div>

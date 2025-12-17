@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
-export default function Testimonials({ darkMode }) {
+export default function Testimonials() {
   const testimonials = [
     {
       name: "Aarav M.",
@@ -34,12 +34,11 @@ export default function Testimonials({ darkMode }) {
       <div className="max-w-6xl mx-auto px-5">
 
         {/* Heading */}
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-black dark:text-white font-[Poppins]">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-black font-[Poppins]">
           Real Results from{" "}
-          <span className="text-[#008080] dark:text-[#008080]">Crash 45 Students & Parents</span>
+          <span className="text-black">Crash 45 Students & Parents</span>
         </h2>
-        <p className="text-center text-lg text-gray-600 dark:text-gray-300 mb-16 max-w-2xl mx-auto">
+        <p className="text-center text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
           See how students improved marks, confidence, and discipline in just 45 hours.
         </p>
 
@@ -59,11 +58,11 @@ export default function Testimonials({ darkMode }) {
                   min-w-[85vw] md:min-w-0 snap-center
                   ${isMiddle
                     ? "shadow-2xl border !border-teal-500/50 md:scale-105 z-10 p-6 md:p-8"
-                    : "border-gray-200 dark:border-zinc-800 p-6"}
+                    : "border-gray-200 p-6"}
                 `}
                 style={{
                   backgroundColor: isMiddle
-                    ? (darkMode ? "#18181b" : "#f0fdfa")
+                    ? "#f0fdfa"
                     : undefined
                 }}
               >
@@ -74,13 +73,12 @@ export default function Testimonials({ darkMode }) {
                   <img
                     src={item.img}
                     alt={item.name}
-                    className={`w-24 h-24 rounded-full mx-auto mb-5 object-cover border-4 border-white dark:border-zinc-800 shadow-md ${isMiddle ? "ring-4 ring-teal-200 dark:ring-teal-900" : ""
+                    className={`w-24 h-24 rounded-full mx-auto mb-5 object-cover border-4 border-white shadow-md ${isMiddle ? "ring-4 ring-teal-200" : ""
                       }`}
                   />
 
                   {/* Name */}
-                  {/* Name */}
-                  <h3 className="text-xl font-bold mb-2 text-black dark:text-white">
+                  <h3 className="text-xl font-bold mb-2 text-black">
                     {item.name}
                   </h3>
 
@@ -92,17 +90,17 @@ export default function Testimonials({ darkMode }) {
                   </div>
 
                   {/* Score */}
-                  <p className="text-lg font-extrabold text-[#008080] dark:text-teal-400 mb-4 bg-teal-50 dark:bg-teal-900/30 py-2 rounded-lg">
+                  <p className="text-lg font-extrabold text-[#008080] mb-4 bg-teal-50 py-2 rounded-lg">
                     {item.score}
                   </p>
 
                   {/* Text */}
-                  <p className="text-sm mb-4 text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
+                  <p className="text-sm mb-4 text-gray-700 leading-relaxed font-medium">
                     "{item.text}"
                   </p>
 
                   {/* Parent Comment */}
-                  <p className="text-xs italic text-gray-500 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-white/10 pt-3 mt-3">
+                  <p className="text-xs italic text-gray-500 leading-relaxed border-t border-gray-100 pt-3 mt-3">
                     Parent: "{item.parent}"
                   </p>
 
@@ -124,10 +122,10 @@ export default function Testimonials({ darkMode }) {
           >
             <div className="flex -space-x-2">
               {[1, 2, 3].map((_, i) => (
-                <div key={i} className="w-6 h-6 rounded-full bg-gray-200 dark:bg-zinc-700 border-2 border-white dark:border-zinc-900" />
+                <div key={i} className="w-6 h-6 rounded-full bg-gray-200 border-2 border-white" />
               ))}
             </div>
-            <span className="text-sm font-semibold text-gray-800 dark:text-gray-100">
+            <span className="text-sm font-semibold text-gray-800">
               ⭐ Rated 4.9/5 by students & parents
             </span>
           </div>
@@ -140,7 +138,7 @@ export default function Testimonials({ darkMode }) {
           transition={{ delay: 0.6 }}
           className="mt-10 text-center"
         >
-          <button className="px-10 py-4 bg-gradient-to-r from-[#008080] to-emerald-600 !text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all ring-4 ring-teal-50 dark:ring-teal-900/30">
+          <button className="px-10 py-4 bg-gradient-to-r from-[#008080] to-emerald-600 !text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all ring-4 ring-teal-50">
             Book a Free Consultation
           </button>
         </motion.div>
