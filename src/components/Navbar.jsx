@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
-import logo from "../assets/logo.png";
+import c45logo from "../assets/c45logo.png";
 
 export default function Navbar({ scrollRefs }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -42,15 +42,14 @@ export default function Navbar({ scrollRefs }) {
           whileHover={{ scale: 1.05 }}
           onClick={() => scrollToSection(scrollRefs.home)}
         >
-          {/* Use mix-blend-mode or filter to handle transparency better if needed, 
-              but since we have white background logo, mix-blend-multiply works for light mode 
-              and invert for dark mode often works but check if BG is white. 
-              Let's assume the logo has a white background. */}
-          <img
-            src={logo}
-            alt="Crash 45"
-            className="h-10 md:h-14 w-auto object-contain dark:invert dark:brightness-200"
-          />
+
+          <div className="relative h-10 w-32 md:h-14 md:w-48 flex items-center">
+            <img
+              src={c45logo}
+              alt="Crash 45"
+              className="absolute top-1/2 left-0 -translate-y-1/2 h-20 md:h-32 w-auto max-w-none object-contain dark:invert dark:brightness-200"
+            />
+          </div>
         </motion.div>
 
         {/* DESKTOP MENU */}
