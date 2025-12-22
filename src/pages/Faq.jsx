@@ -102,7 +102,7 @@ Each test includes faculty evaluation + performance insight + improvement pointe
 
                   {/* Question */}
                   {/* Question */}
-                  <h4 className="text-lg md:text-xl font-bold text-[#008080] dark:text-white">
+                  <h4 className="text-lg md:text-xl font-semibold text-[#008080] dark:text-white">
                     {faq.q}
                   </h4>
 
@@ -146,7 +146,7 @@ Each test includes faculty evaluation + performance insight + improvement pointe
           transition={{ delay: 0.2 }}
           className="mt-16 text-center rounded-3xl p-8 md:p-12 border border-white dark:border-white/10 bg-white dark:bg-[#18181b] shadow-sm"
         >
-          <h4 className="text-2xl font-bold text-[#008080] dark:text-white mb-2">
+          <h4 className="text-2xl font-semibold text-[#008080] dark:text-white mb-2">
             Still have questions?
           </h4>
           <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto">

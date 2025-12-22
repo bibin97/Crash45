@@ -27,10 +27,7 @@ export default function Navbar({ scrollRefs }) {
     <nav
       className="
         fixed top-0 left-0 right-0 z-50 
-        backdrop-blur-xl 
-        border-b
-        bg-white/70 dark:bg-black/70 
-        border-white/20 dark:border-white/10
+        bg-transparent
         transition-all duration-300
       "
     >
@@ -65,20 +62,24 @@ export default function Navbar({ scrollRefs }) {
                 transition-all 
                 relative 
                 cursor-pointer
-                hover:text-teal-600 dark:hover:text-yellow-400
+                hover:text-[#008080] dark:hover:text-yellow-400
+                hover:-translate-y-0.5
               "
-              whileHover={{ scale: 1.1, y: -2 }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               {item.name}
 
               <span
                 className="
-                  absolute left-0 -bottom-1 
+                  absolute left-1/2 bottom-0
                   w-0 h-[2px] 
-                  bg-[#008080] dark:bg-yellow-400 
-                  transition-all duration-300 
+                  bg-[#008080] dark:bg-yellow-400
+                  -translate-x-1/2
+                  rounded-full
+                  transition-all duration-300 ease-out 
                   group-hover:w-full
+                  shadow-[0_0_8px_rgba(0,128,128,0.4)] dark:shadow-[0_0_8px_rgba(250,204,21,0.4)]
                 "
               ></span>
             </motion.button>
