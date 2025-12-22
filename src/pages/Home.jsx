@@ -122,8 +122,7 @@ export default function Home() {
                 <div
                   className="
                     text-3xl font-extrabold
-                    bg-[#008080] bg-clip-text text-transparent
-                    group-hover:brightness-110
+                    text-[#008080] dark:text-yellow-400
                     transition-all duration-300
                   "
                 >
@@ -136,7 +135,7 @@ export default function Home() {
 
                 <div
                   className="
-                    w-6 h-1 bg-[#008080]
+                    w-6 h-1 bg-[#008080] dark:bg-yellow-400
                     mx-auto mt-2 rounded-full opacity-60
                     group-hover:w-8 group-hover:opacity-90
                     transition-all duration-300
