@@ -3,6 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 export default function FAQ() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   const faqs = [
     {
       q: "How are the 45 hours divided?",
@@ -27,10 +33,10 @@ Crash 45 guarantees 100% chapter completion, not just 45 hours of teaching.`
       q: "Are the faculty qualified?",
       a: `Yes — all Crash 45 faculty are:
 
-• Experienced subject specialists  
-• Trained in concept-based teaching  
-• Skilled in board-exam pattern preparation  
-• Selected through Mash Magic’s multi-step faculty screening process  
+• Experienced subject specialists
+• Trained in concept-based teaching
+• Skilled in board-exam pattern preparation
+• Selected through Mash Magic’s multi-step faculty screening process
 
 They are additionally trained in the Crash 45 structured teaching methodology before handling students.`
     },
@@ -65,91 +71,98 @@ Each test includes faculty evaluation + performance insight + improvement pointe
     }
   ];
 
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleFAQ = (i) => {
-    setOpenIndex(openIndex === i ? null : i);
-  };
-
   return (
-    <div className="max-w-3xl mx-auto py-16 px-4">
+    <div className="w-full py-16 px-4 bg-white dark:bg-black min-h-screen">
+      <div className="max-w-5xl mx-auto">
 
-      {/* MAIN HEADING */}
-      {/* MAIN HEADING */}
-      <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-center font-[Poppins]">
-        Common Questions <span className="text-black dark:text-white">About Crash 45</span>
-      </h2>
-      <p className="text-center text-lg text-gray-900 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
-        Clear answers to the most common questions from students and parents.
-      </p>
+        {/* Section Heading */}
+        {/* Section Heading */}
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10 text-[#008080] dark:text-white">
+          Understand Crash45 Better
+        </h2>
 
-      <div className="space-y-4">
-        {faqs.map((faq, i) => (
-          <div
-            key={i}
-            className="about-card group cursor-pointer relative !p-6 !rounded-2xl transition-colors dark:hover:bg-zinc-800/50"
-            onClick={() => toggleFAQ(i)}
-          >
-            <div className="flex justify-between items-center">
-
-              {/* QUESTION */}
-              {/* QUESTION */}
-              <h2 className="text-lg font-bold text-black dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-300 transition-colors border-white dark:border-gray-950">
-                {faq.q}
-              </h2>
-
-              {/* ICON */}
-              <motion.div
-                animate={{ rotate: openIndex === i ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
+        {/* FAQ Container */}
+        <div className="bg-white dark:bg-[#18181b] rounded-2xl shadow-sm border border-gray-200 dark:border-white/10 overflow-hidden">
+          {faqs.map((faq, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <div
+                key={i}
+                onClick={() => toggleFAQ(i)}
+                className={`
+                  cursor-pointer transition-all duration-300 border-b border-gray-100 dark:border-white/10 last:border-0
+                  border-l-4
+                  ${isOpen
+                    ? "bg-[#008080]/10 border-l-[#008080]"
+                    : "bg-white dark:bg-[#18181b] border-l-transparent hover:bg-[#008080]/5 hover:border-l-[#008080]"
+                  }
+                `}
               >
-                <ChevronDown style={{ color: "#008080" }} />
-              </motion.div>
-            </div>
+                <div className="p-6 md:p-8 flex justify-between items-center gap-4">
 
-            {/* ANSWER */}
-            <AnimatePresence>
-              {openIndex === i && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="overflow-hidden"
-                >
-                  <p className="mt-4 border-t border-gray-100 text-sm md:text-[15px] text-gray-900 dark:text-white whitespace-pre-line leading-relaxed">
-                    {faq.a}
-                  </p>
-                </motion.div>
-              )}
-            </AnimatePresence>
+                  {/* Question */}
+                  {/* Question */}
+                  <h4 className="text-lg md:text-xl font-bold text-[#008080] dark:text-white">
+                    {faq.q}
+                  </h4>
 
-          </div>
-        ))}
-      </div>
+                  {/* Icon */}
+                  <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex-shrink-0 text-[#008080] dark:text-white"
+                  >
+                    <ChevronDown size={24} />
+                  </motion.div>
+                </div>
 
-      {/* CTA Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-        className="mt-16 text-center  rounded-3xl p-8 md:p-12 border border-white bg-white dark:bg-black"
-      >
-        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-          Still have questions?
-        </h3>
-        <p className="text-gray-900 dark:text-white mb-8 max-w-xl mx-auto">
-          We understand that choosing the right program is important. Talk to our academic counselor to get clear answers.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-3.5 bg-yellow-400 text-white hover:bg-teal-700 rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all text-lg">
-            Enroll Now
-          </button>
-          <button className="px-8 py-3.5 bg-white border-2 border-[#008080] text-[#008080] rounded-full font-bold hover:bg-yellow-400 transition-all text-lg">
-            Talk to a Mentor
-          </button>
+                {/* Answer Accordion */}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 md:px-8 md:pb-8">
+                        <p className="text-gray-700 dark:text-gray-300 whitespace-pre-line leading-relaxed text-[15px] md:text-base">
+                          {faq.a}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
         </div>
-      </motion.div>
+
+        {/* CTA Section (Preserved) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="mt-16 text-center rounded-3xl p-8 md:p-12 border border-white dark:border-white/10 bg-white dark:bg-[#18181b] shadow-sm"
+        >
+          <h4 className="text-2xl font-bold text-[#008080] dark:text-white mb-2">
+            Still have questions?
+          </h4>
+          <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto">
+            We understand that choosing the right program is important. Talk to our academic counselor to get clear answers.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="px-8 py-3.5 bg-yellow-400 text-black border-2 border-yellow-400 hover:bg-[#008080] hover:text-white hover:border-[#008080] rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all text-lg">
+              Enroll Now
+            </button>
+            <button className="px-8 py-3.5 bg-white text-black border-2 border-[#008080] hover:bg-[#008080] hover:text-white rounded-full font-bold transition-all text-lg shadow-sm hover:shadow-md">
+              Talk to a Mentor
+            </button>
+          </div>
+        </motion.div>
+
+      </div>
     </div>
   );
 }

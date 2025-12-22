@@ -47,7 +47,7 @@ export default function Navbar({ scrollRefs }) {
             <img
               src={c45logo}
               alt="Crash 45"
-              className="absolute top-1/2 left-0 -translate-y-1/2 h-20 md:h-32 w-auto max-w-none object-contain dark:invert dark:brightness-200"
+              className="absolute top-1/2 left-0 -translate-y-1/2 h-20 md:h-32 w-auto max-w-none object-contain"
             />
           </div>
         </motion.div>
@@ -65,7 +65,7 @@ export default function Navbar({ scrollRefs }) {
                 transition-all 
                 relative 
                 cursor-pointer
-                hover:text-teal-600 dark:hover:text-teal-400
+                hover:text-teal-600 dark:hover:text-yellow-400
               "
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
@@ -76,7 +76,7 @@ export default function Navbar({ scrollRefs }) {
                 className="
                   absolute left-0 -bottom-1 
                   w-0 h-[2px] 
-                  bg-[#008080] 
+                  bg-[#008080] dark:bg-yellow-400 
                   transition-all duration-300 
                   group-hover:w-full
                 "

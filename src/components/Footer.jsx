@@ -17,7 +17,7 @@ export default function Footer() {
         {/* Column 1: Brand */}
         <div>
           <div className="text-3xl font-black mb-4 flex items-center gap-1">
-            <span style={{ color: "#008080" }}>CRASH</span>
+            <span className="text-[#008080] dark:text-yellow-400">CRASH</span>
             <span className="text-black dark:text-white">45</span>
           </div>
           <p className="text-sm leading-relaxed text-gray-600">

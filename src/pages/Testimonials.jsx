@@ -88,18 +88,18 @@ export default function Testimonials() {
                   </div>
 
                   {/* Score */}
-                  <p className="text-lg font-extrabold text-[#008080] dark:text-teal-400 mb-4 bg-teal-50 dark:bg-teal-900/30 py-2 rounded-lg">
+                  <p className="text-lg font-extrabold text-[#008080] dark:text-yellow-400 mb-4 bg-teal-50 dark:bg-teal-900/30 py-2 rounded-lg">
                     {item.score}
                   </p>
 
                   {/* Text */}
-                  <p className="text-sm mb-4 text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
+                  <p className="text-sm mb-4 text-black dark:text-white leading-relaxed font-medium">
                     "{item.text}"
                   </p>
 
                   {/* Parent Comment */}
-                  <p className="text-xs italic text-gray-500 leading-relaxed border-t border-gray-100 pt-3 mt-3">
-                    Parent: "{item.parent}"
+                  <p className="text-xs italic text-gray-500 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-white/10 pt-3 mt-3">
+                    Parent: <span className="text-gray-600 dark:text-white">"{item.parent}"</span>
                   </p>
 
                 </div>
@@ -123,7 +123,7 @@ export default function Testimonials() {
                 <div key={i} className="w-6 h-6 rounded-full bg-gray-200 border-2 border-white" />
               ))}
             </div>
-            <span className="text-sm font-semibold text-gray-800">
+            <span className="text-sm font-semibold text-gray-800 dark:text-white">
               ⭐ Rated 4.9/5 by students & parents
             </span>
           </div>

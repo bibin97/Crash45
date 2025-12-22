@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, BookOpen, FileText, Trophy, Target } from "lucide-react";
+import { GraduationCap, BookOpen, FileText, Trophy, Target, UserCheck } from "lucide-react";
 
 export default function Who() {
   const points = [
@@ -8,6 +8,11 @@ export default function Who() {
     { text: "Students preparing for board exams", icon: FileText },
     { text: "Students aiming for 90%+ scores", icon: Trophy },
     { text: "Students needing complete syllabus coverage", icon: Target },
+    {
+      text: "Parents who want structured guidance & regular progress updates",
+      icon: UserCheck,
+      color: "text-[#008080]"
+    },
   ];
 
   return (
@@ -54,7 +59,7 @@ export default function Who() {
               className="flex items-center gap-4 text-lg"
             >
               <div className="flex-shrink-0 w-10 h-10 rounded-full  flex items-center justify-center">
-                <item.icon className="text-gray-600 dark:text-gray-400" size={28} />
+                <item.icon className="text-[#008080]" size={28} />
               </div>
               <span className="text-gray-800 dark:text-gray-200 font-medium">{item.text}</span>
             </motion.li>

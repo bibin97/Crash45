@@ -9,11 +9,7 @@ export default function ThemeToggle({ className = "" }) {
     return (
         <motion.button
             onClick={toggleTheme}
-            className={`p-2 rounded-full transition-colors duration-200 border ${className} 
-        ${theme === 'dark'
-                    ? 'bg-zinc-800 border-zinc-700 text-yellow-400 hover:bg-zinc-700'
-                    : 'bg-white border-gray-200 text-orange-500 hover:bg-gray-50'
-                }`}
+            className={`p-2 rounded-full transition-colors duration-200 border ${className} bg-yellow-400 border-yellow-400 text-black hover:bg-yellow-500`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Toggle Theme"

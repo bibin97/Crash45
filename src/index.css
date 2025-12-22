@@ -36,9 +36,19 @@ h5,
 h6 {
   font-family: "Poppins", sans-serif !important;
 }
-h1,h2,h3{
+
+h1,
+h2,
+h3 {
   color: #008080;
 }
+
+/* Dark mode heading override */
+.dark h1,
+.dark h2 {
+  color: #facc15 !important;
+}
+
 /* Paragraphs / lists */
 body {
   font-family: "Inter", sans-serif !important;
@@ -123,8 +133,12 @@ button:not(.nav-item):hover {
 }
 
 .dark .nav-item:hover {
-  color: #2dd4bf !important;
-  /* teal-400 */
+  color: #facc15 !important;
+  /* yellow-400 */
+}
+
+.dark .nav-item::after {
+  background: #facc15 !important;
 }
 
 
