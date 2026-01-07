@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function Cta() {
+export default function Cta({ onOpenModal }) {
   return (
     <section className="max-w-6xl mx-auto px-6 py-16">
       <motion.div
@@ -24,7 +24,10 @@ export default function Cta() {
 
         {/* Buttons */}
         <div className="flex gap-4">
-          <button className="px-8 py-3 bg-[#f8ba2b] text-black font-bold rounded-full shadow-lg hover:bg-[#e6ac22] hover:scale-105 transition-all">
+          <button
+            onClick={onOpenModal}
+            className="px-8 py-3 bg-[#f8ba2b] text-black font-bold rounded-full shadow-lg hover:bg-[#e6ac22] hover:scale-105 transition-all"
+          >
             Enroll Now
           </button>
         </div>

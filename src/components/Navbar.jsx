@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import c45logo from "../assets/c45logo.png";
 
-export default function Navbar({ scrollRefs }) {
+export default function Navbar({ scrollRefs, onOpenModal }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navItems = [
@@ -89,6 +89,7 @@ export default function Navbar({ scrollRefs }) {
 
           {/* ENROLL BUTTON */}
           <motion.button
+            onClick={onOpenModal}
             className="px-6 py-2 rounded-full font-bold bg-[#f8ba2b] text-black"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
@@ -125,7 +126,13 @@ export default function Navbar({ scrollRefs }) {
           ))}
 
           {/* MOBILE ENROLL BUTTON */}
-          <button className="w-full mt-4 py-3 rounded-full font-bold bg-[#f8ba2b] text-black">
+          <button
+            onClick={() => {
+              setMenuOpen(false);
+              onOpenModal();
+            }}
+            className="w-full mt-4 py-3 rounded-full font-bold bg-[#f8ba2b] text-black"
+          >
             Enroll Now
           </button>
 

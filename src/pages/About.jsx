@@ -143,7 +143,7 @@ export default function About() {
 
               {/* Card */}
               <div className=" rounded-2xl shadow-lg p-6 w-full border  border-gray-200 dark:border-white/10 hover:shadow-2xl transition-all duration-300 bg-white dark:bg-[#18181b]">
-                <h3 className="text-lg font-[Poppins] font-semibold mb-2 text-[#008080] dark:text-teal-400">
+                <h3 className="text-lg font-[Poppins] font-semibold mb-2 text-[#008080] dark:!text-yellow-400">
                   {step.title}
                 </h3>
 

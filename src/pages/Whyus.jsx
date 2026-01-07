@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle, ArrowRight, Handshake, BookOpen, Clock, GraduationCap } from "lucide-react";
 
-export default function WhyUs() {
+export default function WhyUs({ onOpenModal }) {
   const points = [
     "100% personalized 1-to-1 classes",
     "Experienced, result-oriented mentors",
@@ -85,7 +85,7 @@ export default function WhyUs() {
         >
           {/* 1. Large Card */}
           <div className="rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-white/10 flex flex-col items-center justify-center text-center bg-white dark:bg-[#18181b] hover:scale-[1.02] transition-transform duration-300">
-            <h3 className="text-6xl font-extrabold text-teal-600 dark:text-teal-400 mb-2">45</h3>
+            <h3 className="text-6xl font-extrabold text-[#008080] dark:!text-yellow-400 mb-2">45</h3>
             <p className="text-black dark:text-white text-lg font-medium">Hours of Intensive Learning</p>
           </div>
 
@@ -127,7 +127,9 @@ export default function WhyUs() {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="text-center mt-12"
       >
-        <button className="w-full md:w-auto px-12 py-4 bg-gradient-to-r from-yellow-600 to-yellow-300 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 mx-auto group">
+        <button
+          onClick={onOpenModal}
+          className="w-full md:w-auto px-12 py-4 bg-gradient-to-r from-yellow-600 to-yellow-300 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 mx-auto group">
           Book Your Seat Now
           <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
         </button>

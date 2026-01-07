@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Cta from "../components/Cta";
-export default function Pricing() {
+export default function Pricing({ onOpenModal }) {
   const plans = [
     {
       title: "Crash 45 (HSS)",
@@ -65,7 +65,7 @@ export default function Pricing() {
                 card
                 
               `}
-           
+
             >
 
               {/* Recommended Tag */}
@@ -115,6 +115,7 @@ export default function Pricing() {
 
               {/* BUTTON */}
               <motion.button
+                onClick={onOpenModal}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 className={`w-full py-4 rounded-xl font-bold text-lg shadow-lg transition-all
@@ -138,7 +139,7 @@ export default function Pricing() {
           ✨ Both plans include study materials, tests, and full 1:1 mentor support.
         </p>
       </div>
-      <Cta />
+      <Cta onOpenModal={onOpenModal} />
     </section >
 
   );

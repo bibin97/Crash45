@@ -4,7 +4,7 @@ import homeimg from "../assets/homeimg.png";
 // Icons
 import { Book, FileText, HelpCircle, FlaskRound } from "lucide-react";
 
-export default function Home() {
+export default function Home({ onOpenModal }) {
   const stats = [
     { number: "45 Hours", label: "Total Learning Time" },
     { number: "1:1 ", label: "Unlimited Support" },
@@ -71,7 +71,8 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.15 }}
           >
             <button
-              className="group bg-[#f6b410] hover:bg-[#ffbf00]
+              onClick={onOpenModal}
+              className="group bg-[#f8ba2b] hover:bg-[#ffbf00]
                         text-black font-semibold px-7 py-3 rounded-full
                         shadow-md transition-all duration-300 w-fit
                         flex items-center gap-2 hover:-translate-y-1 hover:shadow-lg relative overflow-hidden"

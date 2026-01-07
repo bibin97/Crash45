@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useRef, useState, useEffect } from "react";
 
 import Navbar from "./components/Navbar";
@@ -11,6 +10,7 @@ import Whyus from "./pages/Whyus";
 import Who from "./pages/Who";
 import Faq from "./pages/Faq";
 import Testimonials from "./pages/Testimonials";
+import BookingModal from "./components/BookingModal";
 
 export default function App() {
 
@@ -26,15 +26,20 @@ export default function App() {
     pricing: useRef(null),
   };
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+
   return (
     <div className="font-['Inter'] min-h-screen bg-[#f7f7f8] text-[#071525] dark:bg-[#05070d] dark:text-[#f3f4f6] transition-colors duration-300">
       <Navbar
         scrollRefs={scrollRefs}
+        onOpenModal={openModal}
       />
 
       <main className="pt-28">
         <section ref={scrollRefs.home}>
-          <Home />
+          <Home onOpenModal={openModal} />
         </section>
 
         <section ref={scrollRefs.about}>
@@ -46,27 +51,29 @@ export default function App() {
         </section>
 
         <section ref={scrollRefs.whyus}>
-          <Whyus />
+          <Whyus onOpenModal={openModal} />
         </section>
 
         <section ref={scrollRefs.who}>
-          <Who />
+          <Who onOpenModal={openModal} />
         </section>
 
         {/* FAQ section */}
         <section ref={scrollRefs.faq}>
-          <Faq />
+          <Faq onOpenModal={openModal} />
         </section>
 
         <section ref={scrollRefs.testimonials}>
-          <Testimonials />
+          <Testimonials onOpenModal={openModal} />
         </section>
 
         <section ref={scrollRefs.pricing}>
-          <Pricing />
+          <Pricing onOpenModal={openModal} />
         </section>
         <Footer />
       </main>
+
+      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

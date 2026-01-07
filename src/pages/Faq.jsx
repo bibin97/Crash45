@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-export default function FAQ() {
+export default function FAQ({ onOpenModal }) {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -153,10 +153,14 @@ Each test includes faculty evaluation + performance insight + improvement pointe
             We understand that choosing the right program is important. Talk to our academic counselor to get clear answers.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3.5 bg-yellow-400 text-black border-2 border-yellow-400 hover:bg-[#008080] hover:text-white hover:border-[#008080] rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all text-lg">
+            <button
+              onClick={onOpenModal}
+              className="px-8 py-3.5 bg-yellow-400 text-black border-2 border-yellow-400 hover:bg-[#008080] hover:text-white hover:border-[#008080] rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all text-lg">
               Enroll Now
             </button>
-            <button className="px-8 py-3.5 bg-white text-black border-2 border-[#008080] hover:bg-[#008080] hover:text-white rounded-full font-bold transition-all text-lg shadow-sm hover:shadow-md">
+            <button
+              onClick={onOpenModal}
+              className="px-8 py-3.5 bg-white text-black border-2 border-[#008080] hover:bg-[#008080] hover:text-white rounded-full font-bold transition-all text-lg shadow-sm hover:shadow-md">
               Talk to a Mentor
             </button>
           </div>

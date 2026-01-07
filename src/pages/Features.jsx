@@ -83,7 +83,7 @@ export default function Features() {
             >
               <div className="mb-4">{item.icon}</div>
 
-              <h3 className="font-semibold text-lg text-[#008080] dark:text-teal-400 mb-2">
+              <h3 className="font-semibold text-lg text-[#008080] dark:!text-yellow-400 mb-2">
                 {item.title}
               </h3>
 

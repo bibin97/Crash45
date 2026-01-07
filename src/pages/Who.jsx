@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { GraduationCap, BookOpen, FileText, Trophy, Target, UserCheck } from "lucide-react";
 
-export default function Who() {
+export default function Who({ onOpenModal }) {
   const points = [
     { text: "Grade 8–12 school students", icon: GraduationCap },
     { text: "CBSE & Kerala syllabus learners", icon: BookOpen },
@@ -68,7 +68,9 @@ export default function Who() {
 
         {/* CTA Button Inside Card */}
         <div className="flex flex-col items-center">
-          <button className="px-8 py-3.5 bg-gradient-to-r from-yellow-600 to-yellow-300 text-white rounded-full font-bold text-lg shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all mb-4">
+          <button
+            onClick={onOpenModal}
+            className="px-8 py-3.5 bg-gradient-to-r from-yellow-600 to-yellow-300 text-white rounded-full font-bold text-lg shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all mb-4">
             Talk to a Mentor
           </button>
           <p className="text-sm text-gray-900 dark:text-white italic opacity-80">

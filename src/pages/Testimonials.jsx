@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
-export default function Testimonials() {
+export default function Testimonials({ onOpenModal }) {
   const testimonials = [
     {
       name: "Aarav M.",
@@ -136,7 +136,9 @@ export default function Testimonials() {
           transition={{ delay: 0.6 }}
           className="mt-10 text-center"
         >
-          <button className="px-10 py-4 bg-yellow-400 !text-black dark:text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all ">
+          <button
+            onClick={onOpenModal}
+            className="px-10 py-4 bg-yellow-400 !text-black dark:text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all ">
             Book a Free Consultation
           </button>
         </motion.div>
